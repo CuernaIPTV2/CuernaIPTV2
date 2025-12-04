@@ -1,78 +1,147 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Cuernavaca IPTV Service</title>
-<meta charset='UTF-8'>
-<style>
-body { font-family: Arial, sans-serif; margin: 20px; }
-h1 { border-bottom: 2px solid #333; padding-bottom: 5px; }
-ul { margin-left: 20px; }
-a { text-decoration: none; color: #0066cc; }
-a:hover { text-decoration: underline; }
-nav a.active { font-weight: bold; color: #cc0000; }
-p.breadcrumb { font-size: 0.9em; color: #555; margin-top: 5px; }
-footer { margin-top: 40px; font-size: 0.8em; color: #777; text-align: center; }
-hr { margin: 20px 0; border: none; border-top: 1px solid #ccc; }
-.contact-box { 
-  margin-top: 40px; 
-  padding: 20px; 
-  background-color: #f9f9f9; 
-  border: 1px solid #ddd; 
-  border-radius: 8px; 
-}
-.contact-box h2 { margin-top: 0; }
-.contact-box a { 
-  display: inline-block; 
-  padding: 10px 20px; 
-  background-color: #25D366; 
-  color: white; 
-  text-decoration: none; 
-  border-radius: 5px; 
-  font-weight: bold; 
-}
-.contact-box a:hover { background-color: #1ebe57; }
-</style>
+  <meta charset="UTF-8">
+  <title>Cuernavaca IPTV Service</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px auto;
+      max-width: 800px;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+    }
+    ul { 
+      margin-left: 20px; 
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+    a { 
+      text-decoration: none; 
+      color: #0066cc; 
+    }
+    a:hover { 
+      text-decoration: underline; 
+    }
+    nav a.active { 
+      font-weight: bold; 
+      color: #cc0000; 
+    }
+    p.breadcrumb { 
+      font-size: 0.9em; 
+      color: #555; 
+      margin-top: 5px; 
+    }
+    footer { 
+      margin-top: 40px; 
+      font-size: 0.8em; 
+      color: #777; 
+      text-align: center; 
+    }
+    hr { 
+      margin: 20px 0; 
+      border: none; 
+      border-top: 1px solid #ccc; 
+    }
+    .contact-box { 
+      margin-top: 40px; 
+      padding: 20px; 
+      background-color: #f9f9f9; 
+      border: 1px solid #ddd; 
+      border-radius: 8px; 
+    }
+    .contact-box h2 { 
+      margin-top: 0; 
+    }
+    .contact-box a { 
+      display: inline-block; 
+      padding: 10px 20px; 
+      background-color: #25D366; 
+      color: white; 
+      text-decoration: none; 
+      border-radius: 5px; 
+      font-weight: bold; 
+    }
+    .contact-box a:hover { 
+      background-color: #1ebe57; 
+    }
+    /* Video section responsive layout */
+    .video-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .video-container {
+      flex: 1 1 45%;
+      min-width: 300px;
+    }
+    .video-container h3 {
+      margin-bottom: 10px;
+    }
+    .video-container iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+  </style>
 </head>
 <body>
-<h1>Cuernavaca IPTV Service</h1>
-<p><strong>What is IPTV?</strong> IPTV stands for Internet Protocol Television. Instead of using traditional cable or satellite signals, IPTV delivers television programs and videos through your internet connection. This means you can watch live channels, movies, and series on demand using the same technology that powers websites and streaming services. If you can browse the web, you can use IPTV — it’s TV made simple.</p>
-<hr>
-<p>Below you’ll find links to explore some of the content available through this service. Click on <em>Live TV Stations</em> to watch channels from different countries, <em>Movies on Demand</em> to enjoy films whenever you like, and <em>TV Series on Demand</em> to catch up on episodes at your own pace.</p>
-<ul>
-<li><a href='live.html'>Live TV Stations</a></li>
-<li><a href='movies.html'>Movies on Demand</a></li>
-<li><a href='series.html'>TV Series on Demand</a></li>
-</ul>
-<p class='breadcrumb'>Cuernavaca IPTV Service</p>
 
-<hr>
-<h2>About IPTV Service</h2>
-<p><strong>What is IPTV?</strong> IPTV stands for Internet Protocol Television.
-Instead of using traditional cable or satellite signals, IPTV delivers television
-programs and videos through your internet connection. This means you can watch live
-channels, movies, and series on demand using the same technology that powers websites
-and streaming services. If you can browse the web, you can use IPTV — it’s TV made simple.</p>
+<main>
+  <h1>Cuernavaca IPTV Service</h1>
+  <p class="breadcrumb">Home</p>
 
-<p>You can view some of the content available by following the links below.
-<em>Live TV Stations</em> lets you explore live channels from different countries around the world,
-<em>Movies on Demand</em> gives you access to watch all sorts of movies whenever you like,
-and <em>TV Series on Demand</em> helps you catch up on episodes at your own pace.</p>
+  <p>IPTV stands for Internet Protocol Television. Instead of using traditional cable or satellite signals, IPTV delivers television programs and videos through your internet connection. This means you can watch live channels, movies, and series on demand using the same technology that powers websites and streaming services. If you can browse the web, you can use IPTV — it’s TV made simple.</p>
 
-<hr>
-<h2>Coming Soon</h2>
-<p>This section is currently under construction and will be expanded in the near future.
-Expected additions include troubleshooting guidance, step‑by‑step directions for using the service,
-static documentation, and instructional videos.</p>
+  <hr>
 
-<!-- WhatsApp Contact Box -->
-<div class="contact-box">
-  <h2>Contact</h2>
-  <p>
-    You can reach out to me if you have any customer questions on WhatsApp.<br>
-    No hablo español. I speak "Google Translate".
-  </p>
-  <a href="https://wa.me/527773638436" target="_blank">Chat on WhatsApp</a>
-</div>
+  <p>Explore the content available through this service:</p>
+  <ul>
+    <li><a href='live.html'>Live TV Stations</a></li>
+    <li><a href='movies.html'>Movies on Demand</a></li>
+    <li><a href='series.html'>TV Series on Demand</a></li>
+  </ul>
+
+  <hr>
+  <h2>Coming Soon</h2>
+  <p>This section is currently under construction and will be expanded in the near future. Expected additions include troubleshooting guidance, step‑by‑step directions for using the service, static documentation, and instructional videos.</p>
+
+  <hr>
+  <h2>Troubleshooting & How-To Videos</h2>
+  <div class="video-section">
+    <div class="video-container">
+      <h3>1. How to Use Voice Search</h3>
+      <iframe src="https://www.youtube.com/embed/jNB7AjbITY4" title="How to Use Voice Search" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="video-container">
+      <h3>2. How to Restart Your TV Box</h3>
+      <iframe src="https://www.youtube.com/embed/g7ktCo2sWbY" title="How to Restart Your TV Box" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="video-container">
+      <h3>3. Saving and Removing Favorites/My List</h3>
+      <iframe src="https://www.youtube.com/embed/eYSx1y1yrZs" title="Saving and Removing Favorites/My List" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="video-container">
+      <h3>4. Checking Service Issues</h3>
+      <iframe src="https://www.youtube.com/embed/OUa86Z-gPZs" title="Checking Service Issues" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- WhatsApp Contact Box -->
+  <div class="contact-box">
+    <h2>Contact</h2>
+    <p>
+      You can reach out to me if you have any customer questions on WhatsApp text messages.<br>
+      No hablo español. I speak "Google Translate".
+    </p>
+    <a href="https://wa.me/527773638436" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+  </div>
+</main>
 
 <footer>
   <p>Cuernavaca IPTV Service © 2025 Cuernavaca IPTV Service. All rights reserved.</p>
