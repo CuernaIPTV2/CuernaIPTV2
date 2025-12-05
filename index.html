@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cuernavaca IPTV Service</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px auto;
+      max-width: 800px;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2 {
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+    }
+    ul { margin-left: 20px; }
+    ul li { margin-bottom: 10px; }
+    a { text-decoration: none; color: #0066cc; }
+    a:hover { text-decoration: underline; }
+    nav a.active { font-weight: bold; color: #cc0000; }
+    p.breadcrumb { font-size: 0.9em; color: #555; margin-top: 5px; }
+    footer { margin-top: 40px; font-size: 0.8em; color: #777; text-align: center; }
+    hr { margin: 20px 0; border: none; border-top: 1px solid #ccc; }
+    .contact-box {
+      margin-top: 40px; padding: 20px;
+      background-color: #f9f9f9; border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    .contact-box h2 { margin-top: 0; }
+    .contact-box a {
+      display: inline-block; padding: 10px 20px;
+      background-color: #25D366; color: white;
+      text-decoration: none; border-radius: 5px;
+      font-weight: bold;
+    }
+    .contact-box a:hover { background-color: #1ebe57; }
+    .video-section { display: flex; flex-wrap: wrap; gap: 20px; }
+    .video-container { flex: 1 1 45%; min-width: 300px; }
+    .video-container h3 { margin-bottom: 10px; }
+    .video-container iframe {
+      width: 100%; aspect-ratio: 16/9;
+      border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    .result-card {
+      border: 1px solid #ddd; padding: 10px;
+      margin: 8px 0; border-radius: 5px;
+      background-color: #fff;
+    }
+    /* Modal background */
+    .modal {
+      display: none; position: fixed; z-index: 999;
+      left: 0; top: 0; width: 100%; height: 100%;
+      overflow: auto; background-color: rgba(0,0,0,0.6);
+    }
+    /* Modal content box */
+    .modal-content {
+      background-color: #fff; margin: 10% auto;
+      padding: 20px; border-radius: 8px;
+      width: 80%; max-width: 700px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    /* Close button */
+    .close {
+      color: #aaa; float: right;
+      font-size: 28px; font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover { color: #000; }
+  </style>
+</head>
+<body>
+
+<main>
+  <h1>Cuernavaca IPTV Service</h1>
+  <p class="breadcrumb">Home</p>
+
+  <p>
+    IPTV stands for Internet Protocol Television. Instead of using traditional cable or satellite signals, IPTV delivers television programs and videos through your internet connection. This means you can watch live channels, movies, and series on demand using the same technology that powers websites and streaming services. If you can browse the web, you can use IPTV — it’s TV made simple.
+  </p>
+  <p> 
+  This site is a work in progress and will be updated on a regular basis.  NO content, videos or anything like that is shared through this site. If you want to come on here, go through the lists and watch content that way, you are not going to be happy.  I will not be providing that type of thing.  This is just an informational site.
+  </p>
+
+  <hr>
+
+  <p>Explore the content available through this service.  Sorry, this is a pop-up but if you search for something that has a lot of results, you will appreciate it. Search for "English" in all areas and you will see what I mean.  Just imagine that result between here and the links to browse through content. *shudder* </p>
+  <!-- Search bar added -->
+  <div class="search-bar">
+    <label for="searchBox">Search Content:</label>
+    <input type="text" id="searchBox" placeholder="Enter title...">
+    <select id="searchScope">
+      <option value="all">All Content</option>
+      <option value="live">Live Channels</option>
+      <option value="movies">Movies</option>
+      <option value="series">TV Series</option>
+    </select>
+    <button onclick="doSearch()">Search</button>
+  </div>
+
+  <ul>
+    <li><a href='live.html'>Live TV Stations</a></li>
+    <li><a href='movies.html'>Movies on Demand</a></li>
+    <li><a href='series.html'>TV Series on Demand</a></li>
+  </ul>
+
+  <hr>
+<h2>Troubleshooting & How-To Videos</h2>
+<div class="video-section">
+  <div class="video-container">
+    <h3>1. How to Use Voice Search</h3>
+    <iframe src="https://www.youtube.com/embed/jNB7AjbITY4" title="How to Use Voice Search" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="video-container">
+    <h3>2. How to Restart Your TV Box</h3>
+    <iframe src="https://www.youtube.com/embed/g7ktCo2sWbY" title="How to Restart Your TV Box" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="video-container">
+    <h3>3. Saving and Removing Favorites/My List</h3>
+    <iframe src="https://www.youtube.com/embed/eYSx1y1yrZs" title="Saving and Removing Favorites/My List" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="video-container">
+    <h3>4. Checking Service Issues</h3>
+    <iframe src="https://www.youtube.com/embed/OUa86Z-gPZs" title="Checking Service Issues" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<hr>
+<h2>Coming Soon</h2>
+<p>This section is currently under construction and will be expanded in the near future. Expected additions include troubleshooting guidance, step‑by‑step directions for using the service, static documentation, and instructional videos.</p>
+
+  <!-- WhatsApp Contact Box -->
+  <div class="contact-box">
+    <h2>Contact</h2>
+    <p>
+      You can reach out to me if you have any customer questions on WhatsApp text messages.<br>
+      No hablo español. I speak "Google Translate".
+    </p>
+    <a href="https://wa.me/527773638436" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+  </div>
+</main>
+
+<footer>
+  <p>Cuernavaca IPTV Service © 2025 Cuernavaca IPTV Service. All rights reserved.</p>
+</footer>
+
+<script>
+async function doSearch() {
+  const query = document.getElementById("searchBox").value.toLowerCase();
+  const scope = document.getElementById("searchScope").value;
+  const resultsContainer = document.getElementById("results");
+  resultsContainer.innerHTML = "<em>Searching...</em>";
+
+  let sections = [];
+  if (scope === "all") {
+    sections = ["live", "movies", "series"];
+  } else {
+    sections = [scope];
+  }
+
+  let results = [];
+  for (const section of sections) {
+    try {
+      const res = await fetch(`${section}.json`);
+      const data = await res.json();
+      results.push(...data.filter(item =>
+        item.title.toLowerCase().includes(query)
+      ));
+    } catch (err) {
+      console.error("Error loading", section, err);
+    }
+  }
+
+  if (results.length === 0) {
+    resultsContainer.innerHTML = "<p>No results found.</p>";
+  } else {
+    resultsContainer.innerHTML = results.map(r => {
+      if (scope === "live" || (scope === "all" && r.channel)) {
+        return `
+          <div class="result-card">
+            <h3>${r.title}</h3>
+            <p><strong>Channel:</strong> ${r.channel}</p>
+            <p><strong>Language:</strong> ${r.language}</p>
+          </div>
+        `;
+      } else {
+        return `
+          <div class="result-card">
+            <h3>${r.title}</h3>
+            <p><strong>Language:</strong> ${r.language}</p>
+          </div>
+        `;
+      }
+    }).join("");
+  }
+  // ✅ Show modal
+  document.getElementById("resultsModal").style.display = "block";
+}
+
+// Close modal
+function closeModal() {
+  document.getElementById("resultsModal").style.display = "none";
+}
+
+// Close modal if user clicks outside
+window.onclick = function(event) {
+  const modal = document.getElementById("resultsModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+<!-- Popup Modal -->
+<div id="resultsModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>Search Results</h2>
+    <div id="results"></div>
+  </div>
+</div>
+
+</body>
+</html>
