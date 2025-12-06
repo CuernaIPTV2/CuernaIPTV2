@@ -1,0 +1,604 @@
+Folder PATH listing
+Volume serial number is 0E6B-2287
+C:.
+|   directory.txt
+|   index.html
+|   live.html
+|   live.json
+|   movies.html
+|   movies.json
+|   series.html
+|   series.json
+|   
++---live
+|   +---24-7
+|   |       arabe.html
+|   |       bab-cricket.html
+|   |       china.html
+|   |       english.html
+|   |       french.html
+|   |       germany.html
+|   |       greece.html
+|   |       india.html
+|   |       ku-kurdish.html
+|   |       malaysia.html
+|   |       portugal.html
+|   |       romania.html
+|   |       spain.html
+|   |       turkish.html
+|   |       
+|   +---Africa
+|   |       af-africa-canal-.html
+|   |       af-africa.html
+|   |       af-dstv.html
+|   |       af-nigeria.html
+|   |       af-senegal.html
+|   |       af-somalia.html
+|   |       af-uganda.html
+|   |       
+|   +---Americas
+|   |       am-argentina-.html
+|   |       am-bolivia.html
+|   |       am-brazil-fhd.html
+|   |       am-brazil-hd.html
+|   |       am-canada-cinema.html
+|   |       am-canada-documentary.html
+|   |       am-canada-entertainment.html
+|   |       am-canada-fran-ais.html
+|   |       am-canada-general.html
+|   |       am-canada-kids.html
+|   |       am-canada-local-channels.html
+|   |       am-canada-music.html
+|   |       am-canada-others.html
+|   |       am-canada-sports-events.html
+|   |       am-caribbean.html
+|   |       am-chile-.html
+|   |       am-colombia.html
+|   |       am-costa-rica.html
+|   |       am-dominican-rep.html
+|   |       am-ecuador.html
+|   |       am-el-salvador.html
+|   |       am-haiti.html
+|   |       am-honduras-.html
+|   |       am-latino.html
+|   |       am-mexico.html
+|   |       am-panama.html
+|   |       am-paraguay-.html
+|   |       am-peru.html
+|   |       am-uruguay.html
+|   |       am-usa-abc.html
+|   |       am-usa-bally-sports.html
+|   |       am-usa-cbs.html
+|   |       am-usa-cinema.html
+|   |       am-usa-cw.html
+|   |       am-usa-dirtvision.html
+|   |       am-usa-documentary.html
+|   |       am-usa-entertainment.html
+|   |       am-usa-espn-.html
+|   |       am-usa-fox-sport.html
+|   |       am-usa-fox.html
+|   |       am-usa-general.html
+|   |       am-usa-ion.html
+|   |       am-usa-kids-famliy.html
+|   |       am-usa-latino.html
+|   |       am-usa-metv.html
+|   |       am-usa-milb.html
+|   |       am-usa-mlb.html
+|   |       am-usa-mls.html
+|   |       am-usa-music.html
+|   |       am-usa-my.html
+|   |       am-usa-nba.html
+|   |       am-usa-nbc-sport.html
+|   |       am-usa-nbc.html
+|   |       am-usa-ncaa.html
+|   |       am-usa-news.html
+|   |       am-usa-nfl.html
+|   |       am-usa-nhl.html
+|   |       am-usa-ohl.html
+|   |       am-usa-pbs.html
+|   |       am-usa-peacock.html
+|   |       am-usa-ppv-live-events.html
+|   |       am-usa-qmjhl.html
+|   |       am-usa-sport.html
+|   |       am-usa-streamed-channels.html
+|   |       am-usa-telemundo.html
+|   |       am-usa-triller-tv.html
+|   |       am-usa-unimas.html
+|   |       am-usa-univision.html
+|   |       am-usa-vix.html
+|   |       am-usa-whl.html
+|   |       am-venezuela.html
+|   |       
+|   +---Arabic
+|   |       ar-algeria.html
+|   |       ar-arab-sport.html
+|   |       ar-bahrain.html
+|   |       ar-bein-entertainment.html
+|   |       ar-bein-sports-fhd-4k.html
+|   |       ar-bein-sports.html
+|   |       ar-christian.html
+|   |       ar-egypt.html
+|   |       ar-emirates.html
+|   |       ar-iraq.html
+|   |       ar-islamic.html
+|   |       ar-jordan.html
+|   |       ar-kuwait.html
+|   |       ar-lebanon.html
+|   |       ar-libya.html
+|   |       ar-mauritania.html
+|   |       ar-morocco.html
+|   |       ar-oman.html
+|   |       ar-palestine.html
+|   |       ar-qatar.html
+|   |       ar-saudi-arabia.html
+|   |       ar-starzplay.html
+|   |       ar-sudan.html
+|   |       ar-syria.html
+|   |       ar-tunisia.html
+|   |       ar-yemen.html
+|   |       
+|   +---Asian Countries
+|   |       as-afghanistan-.html
+|   |       as-australia.html
+|   |       as-bangladesh.html
+|   |       as-cambodia.html
+|   |       as-china.html
+|   |       as-india-bangla.html
+|   |       as-india-bhojpuri.html
+|   |       as-india-gujarati.html
+|   |       as-india-hindi.html
+|   |       as-india-kannada.html
+|   |       as-india-malayalam.html
+|   |       as-india-marathi.html
+|   |       as-india-punjabi.html
+|   |       as-india-tamil.html
+|   |       as-india-telugu.html
+|   |       as-indonesia.html
+|   |       as-iran.html
+|   |       as-isra-l.html
+|   |       as-japan.html
+|   |       as-kazakhstan.html
+|   |       as-korea.html
+|   |       as-malaysia.html
+|   |       as-new-zealand.html
+|   |       as-pakistan-vip.html
+|   |       as-pakistan.html
+|   |       as-philippine.html
+|   |       as-singapore.html
+|   |       as-sri-lanka.html
+|   |       as-taiwan.html
+|   |       as-thailland.html
+|   |       as-vietnam.html
+|   |       
+|   +---European Countries
+|   |       eu-albania-dokumentare.html
+|   |       eu-albania-femijet.html
+|   |       eu-albania-filma.html
+|   |       eu-albania-gjenerale.html
+|   |       eu-albania-lajme.html
+|   |       eu-albania-muzike.html
+|   |       eu-armenia-.html
+|   |       eu-azerbaijan.html
+|   |       eu-exyu-24-7.html
+|   |       eu-exyu-bosnia.html
+|   |       eu-exyu-croatia.html
+|   |       eu-exyu-general.html
+|   |       eu-exyu-macedonia.html
+|   |       eu-exyu-pink.html
+|   |       eu-exyu-slovenia.html
+|   |       eu-exyu-sports.html
+|   |       eu-exyu-srbija.html
+|   |       eu-ezidxan.html
+|   |       eu-france-cinema-.html
+|   |       eu-france-divertissement-.html
+|   |       eu-france-documentary-.html
+|   |       eu-france-dom-tom.html
+|   |       eu-france-enfants.html
+|   |       eu-france-generale-.html
+|   |       eu-france-information.html
+|   |       eu-france-music-.html
+|   |       eu-france-ppv.html
+|   |       eu-france-sports-.html
+|   |       eu-germany-fhd.html
+|   |       eu-germany-hd.html
+|   |       eu-germany-hevc.html
+|   |       eu-germany-ppv-.html
+|   |       eu-portugal-fhd.html
+|   |       eu-portugal-hd.html
+|   |       eu-portugal-hevc.html
+|   |       eu-scandinave-ppv.html
+|   |       eu-spain-fhd.html
+|   |       eu-spain-hd.html
+|   |       eu-spain-hevc.html
+|   |       eu-spain-sd.html
+|   |       eu-spain-sports.html
+|   |       eu-turk-belgesel.html
+|   |       eu-turk-cocuk.html
+|   |       eu-turk-diger-kanalar.html
+|   |       eu-turk-dini.html
+|   |       eu-turk-haber.html
+|   |       eu-turk-muzik.html
+|   |       eu-turk-sinema.html
+|   |       eu-turk-spor.html
+|   |       eu-turk-ulusal.html
+|   |       
+|   \---VIP
+|           vip-f1-and-motogp.html
+|           vip-ppv-sport-events.html
+|           vip-ramadan-2024.html
+|           
++---movies
+|   +---Albanian
+|   |       alb-filmet.html
+|   |       alb-kids.html
+|   |       
+|   +---Arabic
+|   |       ar-.html
+|   |       ar-shahid-vip-.html
+|   |       ar-_1.html
+|   |       ar-_10.html
+|   |       ar-_2.html
+|   |       ar-_3.html
+|   |       ar-_4.html
+|   |       ar-_5.html
+|   |       ar-_6.html
+|   |       ar-_7.html
+|   |       ar-_8.html
+|   |       ar-_9.html
+|   |       
+|   +---Bulgarian
+|   |       bg-bulgarian-movies-.html
+|   |       
+|   +---Chinese
+|   |       ch-china.html
+|   |       
+|   +---Danish
+|   |       dk-danish.html
+|   |       
+|   +---English
+|   |       en-3d-movies.html
+|   |       en-action-war.html
+|   |       en-adventure.html
+|   |       en-amazon-prime-.html
+|   |       en-anime.html
+|   |       en-british.html
+|   |       en-classic.html
+|   |       en-comedy.html
+|   |       en-crime-mystery.html
+|   |       en-disney-shorts.html
+|   |       en-disney.html
+|   |       en-documentary.html
+|   |       en-drama-romance.html
+|   |       en-family-children.html
+|   |       en-hbo.html
+|   |       en-horror.html
+|   |       en-music-concert-festival.html
+|   |       en-netflix.html
+|   |       en-new-releases.html
+|   |       en-sci-fi-fantasy.html
+|   |       en-stand-up-comedy.html
+|   |       en-super-heros.html
+|   |       en-thriller.html
+|   |       en-urban.html
+|   |       en-western.html
+|   |       
+|   +---Espanol
+|   |       es-2019-2020.html
+|   |       es-acci-n-guerra.html
+|   |       es-animaci-n-anime.html
+|   |       es-aventuras.html
+|   |       es-comedia.html
+|   |       es-crimen-novela-de-suspenso.html
+|   |       es-documental.html
+|   |       es-drama.html
+|   |       es-familia-dibujos-animados-para-ni-os.html
+|   |       es-fantas-a-ciencia-ficci-n.html
+|   |       es-historia-peliculas-del-oeste.html
+|   |       es-misterio.html
+|   |       es-nuevos-lanzamientos.html
+|   |       es-otros.html
+|   |       es-romance.html
+|   |       es-terror.html
+|   |       es-tv-show-m-sica.html
+|   |       
+|   +---Ex-Yugoslavian Countries
+|   |       exyu-akcioni-filmovi.html
+|   |       exyu-amazon-prime.html
+|   |       exyu-animirani-filmovi.html
+|   |       exyu-avanturisticki-filmovi.html
+|   |       exyu-dokumentarni-filmovi.html
+|   |       exyu-domaci-filmovi.html
+|   |       exyu-drama-filmovi.html
+|   |       exyu-hbo.html
+|   |       exyu-horor-filmovi.html
+|   |       exyu-komedija-filmovi.html
+|   |       exyu-mesoviti-zanrovi.html
+|   |       exyu-muzicki-koncerti.html
+|   |       exyu-netflix.html
+|   |       exyu-strani-filmovi.html
+|   |       
+|   +---French
+|   |       fr-anime-manga.html
+|   |       fr-concert-musique.html
+|   |       fr-famille-enfants.html
+|   |       fr-films-4k.html
+|   |       fr-films.html
+|   |       fr-football.html
+|   |       fr-netflix.html
+|   |       fr-no-l.html
+|   |       fr-qu-bec.html
+|   |       fr-recement-ajouter.html
+|   |       fr-th-tre-spectacle.html
+|   |       
+|   +---German
+|   |       de-filme.html
+|   |       de-kinder-filme.html
+|   |       de-klassische-filme.html
+|   |       de-neue-filme.html
+|   |       
+|   +---Greek
+|   |       gr-2019-2020.html
+|   |       gr-kids.html
+|   |       gr-movies-2021.html
+|   |       gr-movies-2022.html
+|   |       gr-old-movies.html
+|   |       
+|   +---Hebrew
+|   |       il-hebrew-movies.html
+|   |       
+|   +---Indian
+|   |       in-bollywood.html
+|   |       in-gujarti.html
+|   |       in-indonesia.html
+|   |       in-kannada.html
+|   |       in-malayalam.html
+|   |       in-south-india.html
+|   |       in-tamil.html
+|   |       in-telugu.html
+|   |       
+|   +---Iranian
+|   |       ir-iranian-movies.html
+|   |       ir-iranian-sub.html
+|   |       
+|   +---Italy
+|   |       it-altre-categoria.html
+|   |       it-animazione-anime.html
+|   |       it-avventura.html
+|   |       it-azione-guerra.html
+|   |       it-commedia.html
+|   |       it-crimine-thriller.html
+|   |       it-documentaria.html
+|   |       it-dramma.html
+|   |       it-famiglia-cartone-animato-per-bambini.html
+|   |       it-fantasia-sci-fi.html
+|   |       it-mistero.html
+|   |       it-orrore.html
+|   |       it-romanza.html
+|   |       it-tv-show-music.html
+|   |       
+|   +---Japanese
+|   |       jp-japan.html
+|   |       
+|   +---Korean
+|   |       ko-korea.html
+|   |       
+|   +---Kurdish
+|   |       kurdish-animation-badini-.html
+|   |       kurdish-movies-badini-.html
+|   |       kurdish-movies-sorani-.html
+|   |       
+|   +---Latino
+|   |       lt-latino-movies.html
+|   |       
+|   +---Malaysian
+|   |       my-astro-movies.html
+|   |       my-malaysia.html
+|   |       
+|   +---Multi-language Subtitles
+|   |       multi-lang-movies-since-2019-4k-1080p-.html
+|   |       multi-lang-movies.html
+|   |       multi-lang-netflix.html
+|   |       multi-lang-sport.html
+|   |       multi-lang-top-2022-2021-movies.html
+|   |       multi-lang-top-2023-movies.html
+|   |       multi-lang-top-2024-movies.html
+|   |       
+|   +---Netherlands
+|   |       nl-classic-films.html
+|   |       nl-films-nieuw.html
+|   |       nl-films.html
+|   |       nl-kinder-films.html
+|   |       
+|   +---Other
+|   |       af-africa-movies.html
+|   |       af-nollywood-movies.html
+|   |       af-somali-movies.html
+|   |       mal-vod-malta.html
+|   |       vod-india-punjabi.html
+|   |       
+|   +---Pakistani
+|   |       pk-pakistan.html
+|   |       
+|   +---Philippines
+|   |       ph-philippine.html
+|   |       
+|   +---Polish
+|   |       pl-polish-movies.html
+|   |       
+|   +---Portuguese
+|   |       br-filmes.html
+|   |       pt-2019-e-mais-velhos.html
+|   |       pt-2020-2019.html
+|   |       pt-disney-.html
+|   |       
+|   +---Romanian
+|   |       ro-movies.html
+|   |       
+|   +---Russian
+|   |       ru-movies.html
+|   |       
+|   +---Swedish
+|   |       sw-swedish-movies.html
+|   |       sw-sweed.html
+|   |       
+|   +---Thailand
+|   |       th-thailand.html
+|   |       
+|   \---Turkey
+|           tr-bati-tar-h.html
+|           tr-belgesel.html
+|           tr-komed-.html
+|           tr-turkish-movies.html
+|           
+\---series
+    +---Albanian
+    |       alb-series.html
+    |       
+    +---Arabic
+    |       ar-.html
+    |       ar-arabic-shows-.html
+    |       ar-ramadan-2022-.html
+    |       ar-ramadan-2023-.html
+    |       ar-ramadan-2024-.html
+    |       ar-shahid-vip-.html
+    |       ar-_1.html
+    |       ar-_10.html
+    |       ar-_2.html
+    |       ar-_3.html
+    |       ar-_4.html
+    |       ar-_5.html
+    |       ar-_6.html
+    |       ar-_7.html
+    |       ar-_8.html
+    |       ar-_9.html
+    |       
+    +---Chinese
+    |       cn-china-series.html
+    |       
+    +---English
+    |       en-amazon-prime.html
+    |       en-anime.html
+    |       en-classic-series.html
+    |       en-hulu.html
+    |       en-kids.html
+    |       en-korean-series.html
+    |       en-netflix.html
+    |       en-quibi-originals.html
+    |       en-series.html
+    |       en-turkish-series.html
+    |       en-tvshows.html
+    |       en-uk-series.html
+    |       
+    +---Espanol
+    |       es-netflix.html
+    |       es-series-sub-espa-ol.html
+    |       es-series.html
+    |       
+    +---Ex-Yugoslavian Countries
+    |       exyu-decije-serije.html
+    |       exyu-doku-serije.html
+    |       exyu-domace-serije.html
+    |       exyu-serije.html
+    |       exyu-strane-serije.html
+    |       
+    +---French
+    |       ca-quebecoise.html
+    |       fr-anime.html
+    |       fr-asiatique.html
+    |       fr-documentaire.html
+    |       fr-enfants.html
+    |       fr-netflix.html
+    |       fr-series-vf.html
+    |       fr-series-vostfr.html
+    |       fr-tele-realite.html
+    |       
+    +---Georgia
+    |       ge-netflix.html
+    |       ge-series.html
+    |       
+    +---Greek
+    |       gr-.html
+    |       gr-_1.html
+    |       
+    +---Hungarian
+    |       hu-hungarian-series.html
+    |       
+    +---Indian
+    |       in-indian-series.html
+    |       
+    +---Indonesian
+    |       id-indonesia-series.html
+    |       
+    +---Iranian
+    |       ir-persian-series.html
+    |       
+    +---Italy
+    |       it-amazon-prime.html
+    |       it-animazione.html
+    |       it-appletv.html
+    |       it-disney-.html
+    |       it-hbo.html
+    |       it-hulu.html
+    |       it-netflix.html
+    |       it-rai-ondemand.html
+    |       it-serie-alter.html
+    |       it-serie-estera.html
+    |       it-serie-italiana.html
+    |       it-serie-sky.html
+    |       
+    +---Korean
+    |       ko-korean-series.html
+    |       
+    +---Kurdish
+    |       ku-kurdish-animation-series-badini-.html
+    |       ku-kurdish-animation-sorani-.html
+    |       
+    +---Malaysian
+    |       my-malaysia-series.html
+    |       
+    +---Malta
+    |       mt-malta-series.html
+    |       
+    +---Multi-language Subtitles
+    |       multi-lang-anime.html
+    |       multi-lang-netflix.html
+    |       multi-lang-series.html
+    |       
+    +---Netherlands
+    |       nl-netflix.html
+    |       nl-series.html
+    |       
+    +---Pakistani
+    |       pk-pakistan-series.html
+    |       
+    +---Philippines
+    |       ph-philippine-series.html
+    |       
+    +---Polish
+    |       pl-polish-series.html
+    |       
+    +---Portuguese
+    |       br-brazil-series.html
+    |       pt-br-series-sub-pt-br.html
+    |       pt-globoplay.html
+    |       pt-netflix.html
+    |       pt-series.html
+    |       pt-star-.html
+    |       
+    +---Romanian
+    |       ro-seria-rom-n-.html
+    |       ro-seria-str-in-.html
+    |       
+    +---Swedish
+    |       sw-netflix.html
+    |       sw-series.html
+    |       
+    +---Thailand
+    |       th-thailand-series.html
+    |       
+    \---Turkey
+            tr-blue-tv.html
+            tr-exxen.html
+            tr-netflix.html
+            tr-series.html
+            
