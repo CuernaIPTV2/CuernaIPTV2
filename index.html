@@ -27,10 +27,6 @@
     a:hover { 
       text-decoration: underline; 
     }
-    nav a.active { 
-      font-weight: bold; 
-      color: #cc0000; 
-    }
     p.breadcrumb { 
       font-size: 0.9em; 
       color: #555; 
@@ -69,7 +65,6 @@
     .contact-box a:hover { 
       background-color: #1ebe57; 
     }
-    /* Video section responsive layout */
     .video-section {
       display: flex;
       flex-wrap: wrap;
@@ -88,6 +83,35 @@
       border-radius: 8px;
       box-shadow: 0 0 5px rgba(0,0,0,0.2);
     }
+    .search-box {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .search-box input, 
+    .search-box select, 
+    .search-box button {
+      padding: 10px;
+      margin: 5px;
+      font-size: 1em;
+    }
+    .search-box button {
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .search-box button:hover {
+      background-color: #004999;
+    }
+    .disclaimer {
+      background: #f1f1f1;
+      padding: 10px;
+      border-left: 4px solid #999;
+      margin-bottom: 20px;
+      font-size: 0.9em;
+      color: #444;
+    }
   </style>
 </head>
 <body>
@@ -96,39 +120,62 @@
   <h1>Cuernavaca IPTV Service</h1>
   <p class="breadcrumb">Home</p>
 
-  <p>IPTV stands for Internet Protocol Television. Instead of using traditional cable or satellite signals, IPTV delivers television programs and videos through your internet connection. This means you can watch live channels, movies, and series on demand using the same technology that powers websites and streaming services. If you can browse the web, you can use IPTV — it’s TV made simple.</p>
+  <!-- Compliance Disclaimer -->
+  <div class="disclaimer">
+    This website is for informational and educational purposes only. 
+    No television channels, movies, or streams are hosted or provided here.
+  </div>
+
+  <p>
+    IPTV stands for Internet Protocol Television. Instead of using traditional cable or satellite signals, IPTV delivers television programs and videos through your internet connection. This page explains how IPTV works and provides general guidance for users.
+  </p>
 
   <hr>
 
-  <p>Explore the content available through this service:</p>
+  <p>Learn more about IPTV content categories:</p>
   <ul>
-    <li><a href='live.html'>Live TV Stations</a></li>
-    <li><a href='movies.html'>Movies on Demand</a></li>
-    <li><a href='series.html'>TV Series on Demand</a></li>
+    <li><a href='live.html'>Understanding Live TV Categories</a></li>
+    <li><a href='movies.html'>Understanding Movies on Demand</a></li>
+    <li><a href='series.html'>Understanding TV Series on Demand</a></li>
   </ul>
 
   <hr>
+
+  <!-- Search Section -->
+  <div class="search-box">
+    <form id="searchForm">
+      <input type="text" id="searchInput" placeholder="Search..." required>
+      <select id="categorySelect">
+        <option value="live">Live</option>
+        <option value="movies">Movies</option>
+        <option value="series">Series</option>
+      </select>
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <hr>
   <h2>Coming Soon</h2>
-  <p>This section is currently under construction and will be expanded in the near future. Expected additions include troubleshooting guidance, step‑by‑step directions for using the service, static documentation, and instructional videos.</p>
+  <p>This section is currently under construction and will be expanded in the near future. Expected additions include troubleshooting guidance, step‑by‑step directions for using IPTV apps, static documentation, and instructional videos.</p>
 
   <hr>
   <h2>Troubleshooting & How-To Videos</h2>
   <div class="video-section">
     <div class="video-container">
       <h3>1. How to Use Voice Search</h3>
-      <iframe src="https://www.youtube.com/embed/jNB7AjbITY4" title="How to Use Voice Search" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/jNB7AjbITY4" title="How to Use Voice Search" frameborder="0" allowfullscreen></iframe>
     </div>
     <div class="video-container">
       <h3>2. How to Restart Your TV Box</h3>
-      <iframe src="https://www.youtube.com/embed/g7ktCo2sWbY" title="How to Restart Your TV Box" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/g7ktCo2sWbY" title="How to Restart Your TV Box" frameborder="0" allowfullscreen></iframe>
     </div>
     <div class="video-container">
       <h3>3. Saving and Removing Favorites/My List</h3>
-      <iframe src="https://www.youtube.com/embed/eYSx1y1yrZs" title="Saving and Removing Favorites/My List" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/eYSx1y1yrZs" title="Saving and Removing Favorites/My List" frameborder="0" allowfullscreen></iframe>
     </div>
     <div class="video-container">
       <h3>4. Checking Service Issues</h3>
-      <iframe src="https://www.youtube.com/embed/OUa86Z-gPZs" title="Checking Service Issues" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/OUa86Z-gPZs" title="Checking Service Issues" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 
@@ -145,7 +192,23 @@
 
 <footer>
   <p>Cuernavaca IPTV Service © 2025 Cuernavaca IPTV Service. All rights reserved.</p>
+  <p>
+    <a href="/legal/terms.html">Terms of Service</a> |
+    <a href="/legal/privacy.html">Privacy Policy</a> |
+    <a href="/legal/dmca.html">DMCA Notice</a>
+  </p>
 </footer>
+
+<script>
+document.getElementById("searchForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const query = document.getElementById("searchInput").value.trim();
+  const category = document.getElementById("categorySelect").value;
+  if (query) {
+    window.location.href = category + ".html?search=" + encodeURIComponent(query);
+  }
+});
+</script>
 
 </body>
 </html>
