@@ -48,7 +48,7 @@
       padding: 20px; 
       background-color: #f9f9f9; 
       border: 1px solid #ddd; 
-      border-radius: 8px; 
+      border-radius: 8px;
     }
     .contact-box h2 { 
       margin-top: 0; 
@@ -146,6 +146,7 @@
     <form id="searchForm">
       <input type="text" id="searchInput" placeholder="Search..." required>
       <select id="categorySelect">
+        <option value="all">All</option>
         <option value="live">Live</option>
         <option value="movies">Movies</option>
         <option value="series">Series</option>
@@ -199,16 +200,18 @@
   </p>
 </footer>
 
+<!-- FIXED SEARCH SCRIPT -->
 <script>
 document.getElementById("searchForm").addEventListener("submit", function(e) {
   e.preventDefault();
   const query = document.getElementById("searchInput").value.trim();
   const category = document.getElementById("categorySelect").value;
   if (query) {
-    window.location.href = category + ".html?search=" + encodeURIComponent(query);
+    window.location.href = "search.html?q=" + encodeURIComponent(query) + "&cat=" + encodeURIComponent(category);
   }
 });
 </script>
 
 </body>
 </html>
+<!-- force update -->

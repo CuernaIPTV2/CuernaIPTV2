@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 20px auto; line-height: 1.6; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 5px; }
+    ul { margin-left: 20px; }
+    li { margin-bottom: 10px; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<h1>Search Results</h1>
+<p id="summary"></p>
+<ul id="results"></ul>
+
+<script>
+async function loadJSON(file) {
+  const response = await fetch(file);
+  return response.json();
+}
+
+async function runSearch() {
+  const params = new URLSearchParams(window.location.search);
+  const query = params.get("q")?.toLowerCase() || "";
+  const category = params.get("cat") || "all";
+
+  const resultsList = document.getElementById("results");
+  const summary = document.getElementById("summary");
+
+  let results = [];
+
+  // LIVE
+  if (category === "all" || category === "live") {
+    const live = await loadJSON("live.json");
+    results.push(
+      ...live.filter(item =>
+        item.title.toLowerCase().includes(query)
+      )
+    );
+  }
+
+  // MOVIES
+  if (category === "all" || category === "movies") {
+    const movies = await loadJSON("movies.json");
+    results.push(
+      ...movies.filter(item =>
+        item.title.toLowerCase().includes(query)
+      )
+    );
+  }
+
+  // SERIES
+  if (category === "all" || category === "series") {
+    const series = await loadJSON("series.json");
+    results.push(
+      ...series.filter(item =>
+        item.title.toLowerCase().includes(query)
+      )
+    );
+  }
+
+  summary.textContent = `Found ${results.length} result(s) for "${query}"`;
+
+  resultsList.innerHTML = results
+    .map(item => `<li>${item.title}</li>`)
+    .join("");
+}
+
+runSearch();
+</script>
+
+</body>
+</html>
