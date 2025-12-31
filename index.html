@@ -4,210 +4,367 @@
   <meta charset="UTF-8">
   <title>Cuernavaca IPTV Service</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px auto;
-      max-width: 800px;
-      line-height: 1.6;
-    }
-    h1, h2 {
-      border-bottom: 2px solid #333;
-      padding-bottom: 5px;
-    }
-    ul { 
-      margin-left: 20px; 
-    }
-    ul li {
-      margin-bottom: 10px;
-    }
-    a { 
-      text-decoration: none; 
-      color: #0066cc; 
-    }
-    a:hover { 
-      text-decoration: underline; 
-    }
-    p.breadcrumb { 
-      font-size: 0.9em; 
-      color: #555; 
-      margin-top: 5px; 
-    }
-    footer { 
-      margin-top: 40px; 
-      font-size: 0.8em; 
-      color: #777; 
-      text-align: center; 
-    }
-    hr { 
-      margin: 20px 0; 
-      border: none; 
-      border-top: 1px solid #ccc; 
-    }
-    .contact-box { 
-      margin-top: 40px; 
-      padding: 20px; 
-      background-color: #f9f9f9; 
-      border: 1px solid #ddd; 
-      border-radius: 8px;
-    }
-    .contact-box h2 { 
-      margin-top: 0; 
-    }
-    .contact-box a { 
-      display: inline-block; 
-      padding: 10px 20px; 
-      background-color: #25D366; 
-      color: white; 
-      text-decoration: none; 
-      border-radius: 5px; 
-      font-weight: bold; 
-    }
-    .contact-box a:hover { 
-      background-color: #1ebe57; 
-    }
-    .video-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .video-container {
-      flex: 1 1 45%;
-      min-width: 300px;
-    }
-    .video-container h3 {
-      margin-bottom: 10px;
-    }
-    .video-container iframe {
-      width: 100%;
-      aspect-ratio: 16/9;
-      border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    }
-    .search-box {
-      text-align: center;
-      margin: 20px 0;
-    }
-    .search-box input, 
-    .search-box select, 
-    .search-box button {
-      padding: 10px;
-      margin: 5px;
-      font-size: 1em;
-    }
-    .search-box button {
-      background-color: #0066cc;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-    .search-box button:hover {
-      background-color: #004999;
-    }
-    .disclaimer {
-      background: #f1f1f1;
-      padding: 10px;
-      border-left: 4px solid #999;
-      margin-bottom: 20px;
-      font-size: 0.9em;
-      color: #444;
-    }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px auto;
+    max-width: 800px;
+    line-height: 1.6;
+    background: #ffffff;
+    color: #000000;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+  h1, h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+  }
+  ul { 
+    margin-left: 20px; 
+  }
+  ul li {
+    margin-bottom: 10px;
+  }
+  a { 
+    text-decoration: none; 
+    color: #0066cc; 
+  }
+  a:hover { 
+    text-decoration: underline; 
+  }
+  p.breadcrumb { 
+    font-size: 0.9em; 
+    color: #555; 
+    margin-top: 5px; 
+  }
+  footer { 
+    margin-top: 40px; 
+    font-size: 0.8em; 
+    color: #777; 
+    text-align: center; 
+  }
+  hr { 
+    margin: 20px 0; 
+    border: none; 
+    border-top: 1px solid #ccc; 
+  }
+  .contact-box { 
+    margin-top: 40px; 
+    padding: 20px; 
+    background-color: #f9f9f9; 
+    border: 1px solid #ddd; 
+    border-radius: 8px;
+  }
+  .contact-box h2 { 
+    margin-top: 0; 
+  }
+  .contact-box a { 
+    display: inline-block; 
+    padding: 10px 20px; 
+    background-color: #25D366; 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    font-weight: bold; 
+  }
+  .contact-box a:hover { 
+    background-color: #1ebe57; 
+  }
+  .video-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .video-container {
+    flex: 1 1 45%;
+    min-width: 300px;
+  }
+  .video-container h3 {
+    margin-bottom: 10px;
+  }
+  .video-container iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  }
+  .search-box {
+    text-align: center;
+    margin: 20px 0;
+  }
+  .search-box input, 
+  .search-box select, 
+  .search-box button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 1em;
+  }
+  .search-box button {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .search-box button:hover {
+    background-color: #004999;
+  }
+  .disclaimer {
+    background: #f1f1f1;
+    padding: 10px;
+    border-left: 4px solid #999;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    color: #444;
+  }
 
-    /* -------------------------------------------------- */
-    /* ANIMATED MODAL SYSTEM (Option A — Subtle + Clean)  */
-    /* -------------------------------------------------- */
+  /* Dark mode toggle */
+  .theme-toggle {
+    text-align: right;
+    margin-bottom: 10px;
+  }
+  .theme-toggle button {
+    padding: 6px 12px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background: #f5f5f5;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .theme-toggle button:hover {
+    background: #e0e0e0;
+  }
 
-    /* Modal Background */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.0);
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-    .modal.show {
-      display: block;
-      background: rgba(0,0,0,0.6);
+  /* -------------------------------------------------- */
+  /* ANIMATED MODAL SYSTEM (Option A — Subtle + Clean)  */
+  /* -------------------------------------------------- */
+
+  /* Modal Background */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.0);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+  .modal.show {
+    display: block;
+    background: rgba(0,0,0,0.6);
+    opacity: 1;
+  }
+
+  /* Modal Box */
+  .modal-content {
+    background: white;
+    margin: 8% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    max-height: 80vh;            /* scrollable modal */
+    overflow-y: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    transform: translateY(20px) scale(0.95);
+    opacity: 0;
+    transition: all 0.25s ease;
+  }
+  .modal.show .modal-content {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  /* Close Button */
+  .close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  .close:hover {
+    color: #cc0000;
+  }
+
+  /* Result list styling */
+  #modalResults {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0;
+  }
+
+  /* Animated list items */
+  #modalResults li {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.35s ease forwards;
+    padding: 6px 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  @keyframes fadeInUp {
+    to {
       opacity: 1;
+      transform: translateY(0);
     }
+  }
 
-    /* Modal Box */
-    .modal-content {
-      background: white;
-      margin: 8% auto;
-      padding: 20px;
-      width: 80%;
-      max-width: 600px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-      transform: translateY(20px) scale(0.95);
-      opacity: 0;
-      transition: all 0.25s ease;
-    }
-    .modal.show .modal-content {
-      transform: translateY(0) scale(1);
-      opacity: 1;
-    }
+  /* Hover effect */
+  #modalResults li:hover {
+    background: #f0f0f0;
+    border-radius: 5px;
+    padding-left: 8px;
+    transition: all 0.2s ease;
+  }
 
-    /* Close Button */
-    .close {
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: color 0.2s ease;
-    }
-    .close:hover {
-      color: #cc0000;
-    }
+  .result-icon {
+    width: 22px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .result-title {
+    font-weight: bold;
+    flex-grow: 1;
+  }
+  .result-meta {
+    font-size: 0.8em;
+    color: #555;
+    white-space: nowrap;
+  }
+  .lang-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 10px;
+    background: #e0e7ff;
+    color: #223;
+    margin-right: 4px;
+  }
 
-    /* Animated list items */
-    #modalResults li {
-      opacity: 0;
-      transform: translateY(10px);
-      animation: fadeInUp 0.35s ease forwards;
-    }
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+  /* No results styling */
+  .no-results {
+    opacity: 1 !important;
+    transform: none !important;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    flex-direction: column;
+  }
+  .no-results small {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.85em;
+  }
 
-    /* Hover effect */
-    #modalResults li:hover {
-      background: #f0f0f0;
-      border-radius: 5px;
-      padding-left: 5px;
-      transition: all 0.2s ease;
+  /* Loading state */
+  .loading {
+    opacity: 1 !important;
+    transform: none !important;
+    justify-content: center;
+    gap: 10px;
+  }
+  .spinner {
+    width: 18px;
+    height: 18px;
+    border: 3px solid #ccc;
+    border-top-color: #0066cc;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
     }
+  }
 
-    /* --------------------------------------------- */
-    /* LANGUAGE TABLE (Option A — Compact 2-column)  */
-    /* --------------------------------------------- */
-    .lang-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-    .lang-table th, .lang-table td {
-      border: 1px solid #ccc;
-      padding: 8px;
-      text-align: left;
-    }
-    .lang-table th {
-      background: #f2f2f2;
-      font-weight: bold;
-    }
-  </style>
+  /* --------------------------------------------- */
+  /* LANGUAGE TABLE (Option A — Compact 2-column)  */
+  /* --------------------------------------------- */
+  .lang-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  .lang-table th, .lang-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  .lang-table th {
+    background: #f2f2f2;
+    font-weight: bold;
+  }
+
+  /* --------------------------------------------- */
+  /* DARK MODE STYLES                              */
+  /* --------------------------------------------- */
+  body.dark-mode {
+    background: #111827;
+    color: #e5e7eb;
+  }
+  body.dark-mode h1, 
+  body.dark-mode h2 {
+    border-bottom-color: #4b5563;
+  }
+  body.dark-mode a {
+    color: #60a5fa;
+  }
+  body.dark-mode a:hover {
+    color: #93c5fd;
+  }
+  body.dark-mode .disclaimer {
+    background: #111827;
+    border-left-color: #4b5563;
+    color: #d1d5db;
+  }
+  body.dark-mode .contact-box {
+    background-color: #1f2937;
+    border-color: #374151;
+  }
+  body.dark-mode .modal-content {
+    background: #111827;
+    color: #e5e7eb;
+  }
+  body.dark-mode #modalResults li:hover {
+    background: #1f2937;
+  }
+  body.dark-mode .lang-table th {
+    background: #1f2937;
+  }
+  body.dark-mode .lang-table td {
+    border-color: #374151;
+  }
+  body.dark-mode .lang-badge {
+    background: #1d4ed8;
+    color: #e5e7eb;
+  }
+  body.dark-mode footer {
+    color: #9ca3af;
+  }
+  body.dark-mode .theme-toggle button {
+    background: #374151;
+    color: #e5e7eb;
+    border-color: #4b5563;
+  }
+  body.dark-mode .theme-toggle button:hover {
+    background: #4b5563;
+  }
+</style>
+
 </head>
 <body>
+<body>
+
+<div class="theme-toggle">
+  <button id="themeToggle">Dark mode</button>
+</div>
+
+<main>
+  <!-- rest of your content -->
 
 <main>
   <h1>Cuernavaca IPTV Service</h1>
@@ -355,6 +512,24 @@ function populateLanguageTable() {
   `;
 }
 
+/* Dark mode toggle */
+const themeToggleBtn = document.getElementById("themeToggle");
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    themeToggleBtn.textContent = document.body.classList.contains("dark-mode")
+      ? "Light mode"
+      : "Dark mode";
+  });
+}
+
+/* Icons and labels per category */
+const categoryMeta = {
+  live:   { icon: "📺", label: "LIVE" },
+  movies: { icon: "🎬", label: "MOVIES" },
+  series: { icon: "📚", label: "SERIES" }
+};
+
 /* Handle Search Submission */
 document.getElementById("searchForm").addEventListener("submit", async function(e) {
   e.preventDefault();
@@ -362,47 +537,94 @@ document.getElementById("searchForm").addEventListener("submit", async function(
   const query = document.getElementById("searchInput").value.trim().toLowerCase();
   const category = document.getElementById("categorySelect").value;
 
+  const summary = document.getElementById("modalSummary");
+  const list = document.getElementById("modalResults");
+  const modal = document.getElementById("searchModal");
+
+  // Reset and show loading state
+  summary.textContent = `Searching for "${query}"...`;
+  list.innerHTML = `
+    <li class="loading">
+      <div class="spinner"></div>
+      <div>Loading results…</div>
+    </li>
+  `;
+  populateLanguageTable();
+  modal.classList.add("show");
+
   let results = [];
 
-  /* Load and filter LIVE */
-  if (category === "all" || category === "live") {
-    const live = await loadJSON("live.json");
-    results.push(...live.filter(item => item.title.toLowerCase().includes(query)));
+  // Helper to push results with category metadata
+  async function fetchAndFilter(file, catKey) {
+    const data = await loadJSON(file);
+    const filtered = data
+      .filter(item => (item.title || "").toLowerCase().includes(query))
+      .map(item => ({
+        title: item.title || "",
+        category: catKey,
+        language: item.language || item.lang || item.code || null
+      }));
+    results.push(...filtered);
   }
 
-  /* Load and filter MOVIES */
-  if (category === "all" || category === "movies") {
-    const movies = await loadJSON("movies.json");
-    results.push(...movies.filter(item => item.title.toLowerCase().includes(query)));
+  try {
+    if (category === "all" || category === "live") {
+      await fetchAndFilter("live.json", "live");
+    }
+    if (category === "all" || category === "movies") {
+      await fetchAndFilter("movies.json", "movies");
+    }
+    if (category === "all" || category === "series") {
+      await fetchAndFilter("series.json", "series");
+    }
+  } catch (err) {
+    summary.textContent = "There was an error loading search data.";
+    list.innerHTML = `
+      <li class="no-results">
+        Unable to load results.
+        <small>Please try again later.</small>
+      </li>
+    `;
+    return;
   }
 
-  /* Load and filter SERIES */
-  if (category === "all" || category === "series") {
-    const series = await loadJSON("series.json");
-    results.push(...series.filter(item => item.title.toLowerCase().includes(query)));
+  // Update summary
+  summary.textContent = `Found ${results.length} result(s) for "${query}"`;
+
+  // No results state
+  if (results.length === 0) {
+    list.innerHTML = `
+      <li class="no-results">
+        No results found.
+        <small>Try a different word or pick a different category.</small>
+      </li>
+    `;
+    return;
   }
 
-  /* Update summary */
-  document.getElementById("modalSummary").textContent =
-    `Found ${results.length} result(s) for "${query}"`;
-
-  /* Populate results with staggered animation */
-  const list = document.getElementById("modalResults");
+  // Populate results with icons, category labels, language badges, and staggered animation
   list.innerHTML = "";
-
   results.forEach((item, i) => {
+    const meta = categoryMeta[item.category] || { icon: "", label: item.category || "" };
+    const lang = item.language;
+    const langBadge = lang
+      ? `<span class="lang-badge">[${lang.toUpperCase()}]</span>`
+      : "";
+
     const li = document.createElement("li");
-    li.textContent = item.title;
     li.style.animationDelay = (i * 0.05) + "s";
+
+    li.innerHTML = `
+      <span class="result-icon">${meta.icon}</span>
+      <span class="result-title">${item.title}</span>
+      <span class="result-meta">
+        ${langBadge}
+        ${meta.label}
+      </span>
+    `;
+
     list.appendChild(li);
   });
-
-  /* Inject Language Table */
-  populateLanguageTable();
-
-  /* Show modal with animation */
-  const modal = document.getElementById("searchModal");
-  modal.classList.add("show");
 });
 
 /* Close Modal */
@@ -418,6 +640,7 @@ window.onclick = function(event) {
   }
 };
 </script>
+
 
 </body>
 </html>
