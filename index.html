@@ -134,6 +134,11 @@
   .theme-toggle button:hover {
     background: #e0e0e0;
   }
+  .site-logo {
+    height: 60px;   /* sweet spot for headers */
+    width: auto;
+    display: block;
+}
 
   /* -------------------------------------------------- */
   /* ANIMATED MODAL SYSTEM (Option A — Subtle + Clean)  */
@@ -361,9 +366,14 @@
 <div class="theme-toggle">
   <button id="themeToggle">Dark mode</button>
 </div>
-<main>
-  <h1>Cuernavaca IPTV Service</h1>
+<main class="header">
+  <a href="/">
+    <img src="CTVS Logo.png" alt="Cuernavaca IPTV Service Logo" class="site-logo">
+  </a>
   <p class="breadcrumb">Home</p>
+</main>
+
+
   
   <!-- Compliance Disclaimer -->
   <div class="disclaimer">
