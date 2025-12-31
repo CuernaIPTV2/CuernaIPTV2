@@ -113,7 +113,7 @@
   }
 
   .site-logo {
-    height: 60px;
+    height: 90px;
     width: auto;
     display: block;
   }
@@ -254,6 +254,30 @@
     overflow-y: auto;
     scrollbar-width: thin;
   }
+  .header-inline {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.title-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.site-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
+}
+
   </style>
 </head>
 <body>
@@ -262,11 +286,16 @@
   <button id="themeToggle">Dark mode</button>
 </div>
 
-<main class="header">
-  <a href="/">
+<main class="header header-inline">
+  <a href="/" class="logo-wrap">
     <img src="CTVS Logo.png" alt="Cuernavaca IPTV Service Logo" class="site-logo">
   </a>
-  <p class="breadcrumb">Home</p>
+
+  <div class="title-wrap">
+    <span class="site-title">Cuernavaca TV Services</span>
+    <p class="breadcrumb"></p>
+	<p>Home</p>
+  </div>
 </main>
 
 <div class="disclaimer">
@@ -284,15 +313,15 @@
 
   <h3>What does it require to work?</h3>
   <ul>
-    <li>Generally speaking, you will need a good Internet connection.  That means you should have at least 30mbps in both download and upload speed at the location you wish to watch TV.</li>
+    <li>Generally speaking, you will need a good Internet connection.  That means you should have at least <strong>30mbps</strong> in both download and upload speed at the location you wish to watch TV.  If your speed is lower than that, you can have issues with buffering.</li>
   </ul>
   <h3>How do I watch it?</h3>
   <ul>
-    <li>This depends on <strong>many factors</strong>. Usually via a TV box or app such as TiviMate, IPTVSmarters, M‑Tivi, Sparkle TV, etc.</li>
+    <li>This depends on <strong>many factors</strong>. You usually watch it via a TV box or another device, and use application such as TiviMate, IPTVSmarters, M‑Tivi, Sparkle TV, etc. to watch the content.</li>
   </ul>
   <h3>Is it like Netflix?</h3>
   <ul>
-    <li>Not exactly — IPTV usually includes <strong>live TV</strong> plus <strong>on‑demand movies and shows</strong>.</li>
+    <li>Not exactly — IPTV usually includes <strong>live TV</strong> plus <strong>on‑demand movies and shows</strong>.  The content available is significantly more than what you can watch on only Netflix. In fact, there is <strong>over 22.8k Live TV stations from around the world, 94.6k movies on demand, and 26.5k TV series on demand. </strong> Further, they generally have <strong>every live sporting event</strong> available to watch. Most TV subscription services will only set you up with the langauges you know or understand to have better performance with the service on your box. </li>
   </ul>
 
   <h3>Does this page provide IPTV service?</h3>
@@ -304,7 +333,7 @@
 <hr><hr>
 
 <section class="iptv-faq">
-  <h2>What’s Available with IPTV?</h2>
+  <h2>So, what’s Available with IPTV?</h2>
 
   <h3>Available Content</h3>
   <ul>
