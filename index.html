@@ -119,7 +119,7 @@
   }
 
   /* -------------------------------------------------- */
-  /* UNIVERSAL MODAL SYSTEM (Search + Video)            */
+  /* UNIVERSAL MODAL SYSTEM                             */
   /* -------------------------------------------------- */
 
   .modal {
@@ -157,7 +157,6 @@
     opacity: 1;
   }
 
-  /* Fixed close button */
   .close {
     position: fixed;
     top: 20px;
@@ -169,14 +168,12 @@
     text-shadow: 0 0 10px black;
   }
 
-  /* Video modal iframe */
   #modalVideo {
     width: 100%;
     height: 70vh;
     border-radius: 10px;
   }
 
-  /* Search results list */
   #modalResults {
     list-style: none;
     padding-left: 0;
@@ -228,7 +225,6 @@
 
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  /* Language table */
   .lang-table {
     width: 100%;
     border-collapse: collapse;
@@ -243,7 +239,6 @@
 
   .lang-table th { background: #f2f2f2; }
 
-  /* Dark mode */
   body.dark-mode {
     background: #111827;
     color: #e5e7eb;
@@ -255,11 +250,10 @@
   }
 
   #searchModal .modal-content {
-  max-height: 80vh;
-  overflow-y: auto;
-}
-
-
+    max-height: 80vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
   </style>
 </head>
 <body>
@@ -275,7 +269,6 @@
   <p class="breadcrumb">Home</p>
 </main>
 
-<!-- Compliance Disclaimer -->
 <div class="disclaimer">
   This website is for informational and educational purposes only. 
   No television channels, movies, or streams are hosted or provided here.
@@ -291,12 +284,12 @@
 
   <h3>How do I watch it?</h3>
   <ul>
-    <li>This is something that can be dependent upon <strong>many different factors</strong>. It is usually done via a TV box or another device, and uses various different programs such as TiviMate, IPTVSmarters, M‑Tivi, Sparkle TV, etc.</li>
+    <li>This depends on <strong>many factors</strong>. Usually via a TV box or app such as TiviMate, IPTVSmarters, M‑Tivi, Sparkle TV, etc.</li>
   </ul>
 
   <h3>Is it like Netflix?</h3>
   <ul>
-    <li>Not exactly, IPTV usually includes <strong>live TV</strong> plus <strong>on‑demand movies and shows</strong>.</li>
+    <li>Not exactly — IPTV usually includes <strong>live TV</strong> plus <strong>on‑demand movies and shows</strong>.</li>
   </ul>
 
   <h3>Does this page provide IPTV service?</h3>
@@ -312,7 +305,7 @@
 
   <h3>Available Content</h3>
   <ul>
-    <li>You can browse the categories below to see what’s offered. You can also use the search function to quickly check if specific content is available.</li>
+    <li>You can browse the categories below or use the search function to check if specific content is available.</li>
   </ul>
 
   <h3>Browse Categories</h3>
@@ -325,7 +318,6 @@
 
 <hr>
 
-<!-- Search Section -->
 <div class="search-box">
   <form id="searchForm">
     <input type="text" id="searchInput" placeholder="Search..." required>
@@ -342,9 +334,7 @@
 <hr>
 
 <h2>Coming Soon</h2>
-<p>This section is currently under construction and will be expanded in the near future.</p>
-<p>Expected additions include troubleshooting guidance, step‑by‑step directions for using IPTV apps, 
-static documentation, and instructional videos.</p>
+<p>This section is under construction. Expected additions include troubleshooting guides, IPTV app instructions, documentation, and instructional videos.</p>
 
 <hr>
 
@@ -353,37 +343,29 @@ static documentation, and instructional videos.</p>
 
   <div class="video-container">
     <h3>1. How to Use Voice Search</h3>
-    <iframe src="https://www.youtube.com/embed/jNB7AjbITY4"
-            title="How to Use Voice Search" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/jNB7AjbITY4" title="How to Use Voice Search" allowfullscreen></iframe>
   </div>
 
   <div class="video-container">
     <h3>2. How to Restart Your TV Box</h3>
-    <iframe src="https://www.youtube.com/embed/g7ktCo2sWbY"
-            title="How to Restart Your TV Box" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/g7ktCo2sWbY" title="How to Restart Your TV Box" allowfullscreen></iframe>
   </div>
 
   <div class="video-container">
     <h3>3. Saving and Removing Favorites/My List</h3>
-    <iframe src="https://www.youtube.com/embed/eYSx1y1yrZs"
-            title="Saving and Removing Favorites/My List" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/eYSx1y1yrZs" title="Saving and Removing Favorites/My List" allowfullscreen></iframe>
   </div>
 
   <div class="video-container">
     <h3>4. Checking Service Issues</h3>
-    <iframe src="https://www.youtube.com/embed/OUa86Z-gPZs"
-            title="Checking Service Issues" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/OUa86Z-gPZs" title="Checking Service Issues" allowfullscreen></iframe>
   </div>
 
 </div>
 
-<!-- WhatsApp Contact Box -->
 <div class="contact-box">
   <h2>Contact</h2>
-  <p>
-    You can reach out to me if you have any customer questions on WhatsApp text messages.<br>
-    No hablo español. I speak "Google Translate".
-  </p>
+  <p>You can reach out to me with customer questions on WhatsApp text messages.<br>No hablo español. I speak "Google Translate".</p>
   <a href="https://wa.me/527773638436" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
 </div>
 
@@ -391,12 +373,9 @@ static documentation, and instructional videos.</p>
 <div id="searchModal" class="modal">
   <div class="modal-content">
     <span id="closeSearchModal" class="close">&times;</span>
-
     <h2>Search Results</h2>
     <p id="modalSummary"></p>
-
     <ul id="modalResults"></ul>
-
     <table class="lang-table" id="langTable"></table>
   </div>
 </div>
@@ -405,7 +384,7 @@ static documentation, and instructional videos.</p>
 <div id="videoModal" class="modal">
   <div class="modal-content">
     <span id="closeVideoModal" class="close">&times;</span>
-    <iframe id="modalVideo" src="" frameborder="0" allowfullscreen></iframe>
+    <iframe id="modalVideo" src="" allowfullscreen></iframe>
   </div>
 </div>
 
@@ -429,34 +408,38 @@ async function loadJSON(file) {
 /* -------------------------------------------------- */
 /* Language Table Data                                 */
 /* -------------------------------------------------- */
-
-const languageCodes=[["AR","Arabic"],["BN","Bengali"],["DE","German"],["EN","English"],["ES","Spanish"],["FR","French"],["HI","Hindi"],["IT","Italian"],["JA","Japanese"],["JV","Javanese"],["KO","Korean"],["LT","Lithuanian"],["MR","Marathi"],["NL","Dutch"],["PA","Punjabi"],["PT","Portuguese"],["SQ","Albanian"],["SW","Swedish"],["TA","Tamil"],["TE","Telugu"],["TR","Turkish"],["UR","Urdu"],["VI","Vietnamese"],["ZH","Chinese"]];
+const languageCodes=[
+  ["AR","Arabic"],["BN","Bengali"],["DE","German"],["EN","English"],
+  ["ES","Spanish"],["FR","French"],["HI","Hindi"],["IT","Italian"],
+  ["JA","Japanese"],["JV","Javanese"],["KO","Korean"],["LT","Lithuanian"],
+  ["MR","Marathi"],["NL","Dutch"],["PA","Punjabi"],["PT","Portuguese"],
+  ["SQ","Albanian"],["SW","Swedish"],["TA","Tamil"],["TE","Telugu"],
+  ["TR","Turkish"],["UR","Urdu"],["VI","Vietnamese"],["ZH","Chinese"]
+];
 
 /* -------------------------------------------------- */
-/* Build Language Table Based on Search Results        */
+/* Build Language Table                                */
 /* -------------------------------------------------- */
 function populateLanguageTable(results) {
   const table = document.getElementById("langTable");
 
-  // Extract languages from results
   const langs = results
-    .map(r => r.language?.toString().trim().slice(0, 2).toUpperCase())
+    .map(r => r.language?.toString().trim().replace(/[^A-Za-z]/g,"").slice(0,2).toUpperCase())
     .filter(Boolean);
 
-  // Remove duplicates
   const uniqueLangs = [...new Set(langs)];
 
-  // If no languages found, clear table
   if (uniqueLangs.length === 0) {
     table.innerHTML = "";
     return;
   }
 
-  // Build table rows only for languages that appear in results
   const rows = uniqueLangs
     .map(code => {
       const match = languageCodes.find(l => l[0] === code);
-      return match ? `<tr><td>${match[0]}</td><td>${match[1]}</td></tr>` : "";
+      return match
+        ? `<tr><td>${match[0]}</td><td>${match[1]}</td></tr>`
+        : `<tr><td>${code}</td><td>Unknown</td></tr>`;
     })
     .join("");
 
@@ -510,7 +493,8 @@ document.getElementById("searchForm").addEventListener("submit", async function(
     </li>
   `;
 
-  modal.classList.add("show");
+  if (!modal.classList.contains("show")) modal.classList.add("show");
+  document.body.classList.add("modal-open");
 
   let results = [];
 
@@ -538,7 +522,6 @@ document.getElementById("searchForm").addEventListener("submit", async function(
 
   summary.textContent = `Found ${results.length} result(s) for "${query}"`;
 
-  /* NEW: Build language table based on results */
   populateLanguageTable(results);
 
   if (results.length === 0) {
@@ -574,12 +557,17 @@ document.getElementById("searchForm").addEventListener("submit", async function(
 /* -------------------------------------------------- */
 /* SEARCH MODAL CLOSE                                  */
 /* -------------------------------------------------- */
-document.getElementById("closeSearchModal").onclick = () =>
+document.getElementById("closeSearchModal").onclick = () => {
   document.getElementById("searchModal").classList.remove("show");
+  document.body.classList.remove("modal-open");
+};
 
 window.addEventListener("click", e => {
   const modal = document.getElementById("searchModal");
-  if (e.target === modal) modal.classList.remove("show");
+  if (e.target === modal) {
+    modal.classList.remove("show");
+    document.body.classList.remove("modal-open");
+  }
 });
 
 /* -------------------------------------------------- */
@@ -592,20 +580,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".video-container iframe").forEach(iframe => {
     iframe.addEventListener("click", () => {
-      modal.classList.add("show");
+      if (!modal.classList.contains("show")) modal.classList.add("show");
       modalVideo.src = iframe.src + "?autoplay=1";
+      document.body.classList.add("modal-open");
     });
   });
 
   closeBtn.onclick = () => {
     modal.classList.remove("show");
     modalVideo.src = "";
+    document.body.classList.remove("modal-open");
   };
 
   window.addEventListener("click", e => {
     if (e.target === modal) {
       modal.classList.remove("show");
       modalVideo.src = "";
+      document.body.classList.remove("modal-open");
     }
   });
 });
@@ -618,6 +609,7 @@ document.addEventListener("keydown", e => {
     document.getElementById("searchModal").classList.remove("show");
     document.getElementById("videoModal").classList.remove("show");
     document.getElementById("modalVideo").src = "";
+    document.body.classList.remove("modal-open");
   }
 });
 </script>
