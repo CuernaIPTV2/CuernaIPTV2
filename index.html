@@ -100,6 +100,7 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      transition: background 0.2s ease;
     }
     .search-box button:hover {
       background-color: #004999;
@@ -113,6 +114,10 @@
       color: #444;
     }
 
+    /* -------------------------------------------------- */
+    /* ANIMATED MODAL SYSTEM (Option A — Subtle + Clean)  */
+    /* -------------------------------------------------- */
+
     /* Modal Background */
     .modal {
       display: none;
@@ -122,7 +127,14 @@
       top: 0;
       width: 100%;
       height: 100%;
+      background: rgba(0,0,0,0.0);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .modal.show {
+      display: block;
       background: rgba(0,0,0,0.6);
+      opacity: 1;
     }
 
     /* Modal Box */
@@ -134,6 +146,13 @@
       max-width: 600px;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      transform: translateY(20px) scale(0.95);
+      opacity: 0;
+      transition: all 0.25s ease;
+    }
+    .modal.show .modal-content {
+      transform: translateY(0) scale(1);
+      opacity: 1;
     }
 
     /* Close Button */
@@ -142,9 +161,49 @@
       font-size: 28px;
       font-weight: bold;
       cursor: pointer;
+      transition: color 0.2s ease;
     }
     .close:hover {
       color: #cc0000;
+    }
+
+    /* Animated list items */
+    #modalResults li {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInUp 0.35s ease forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hover effect */
+    #modalResults li:hover {
+      background: #f0f0f0;
+      border-radius: 5px;
+      padding-left: 5px;
+      transition: all 0.2s ease;
+    }
+
+    /* --------------------------------------------- */
+    /* LANGUAGE TABLE (Option A — Compact 2-column)  */
+    /* --------------------------------------------- */
+    .lang-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .lang-table th, .lang-table td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    .lang-table th {
+      background: #f2f2f2;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -166,7 +225,8 @@
 
   <hr>
 
-  <p>What is available?  Well, you can click on one of the links below or search for it with the below search function.  The FR, DE, EN, ES corresponds to the language it is in - FR = French, DE = German, EN = English, ES = Spanish, etc:</p>
+  <p>What is available?  Well, you can click on one of the links below or search for it with the below search function:</p>
+
   <ul>
     <li><a href='live.html'>Live TV stations</a></li>
     <li><a href='movies.html'>Movies on Demand</a></li>
@@ -190,27 +250,38 @@
   </div>
 
   <hr>
+
   <h2>Coming Soon</h2>
-  <p>This section is currently under construction and will be expanded in the near future. Expected additions include troubleshooting guidance, step‑by‑step directions for using IPTV apps, static documentation, and instructional videos.</p>
+  <p>This section is currently under construction and will be expanded in the near future. 
+  Expected additions include troubleshooting guidance, step‑by‑step directions for using IPTV apps, 
+  static documentation, and instructional videos.</p>
 
   <hr>
+
   <h2>Troubleshooting & How-To Videos</h2>
   <div class="video-section">
     <div class="video-container">
       <h3>1. How to Use Voice Search</h3>
-      <iframe src="https://www.youtube.com/embed/jNB7AjbITY4" title="How to Use Voice Search" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/jNB7AjbITY4" 
+              title="How to Use Voice Search" frameborder="0" allowfullscreen></iframe>
     </div>
+
     <div class="video-container">
       <h3>2. How to Restart Your TV Box</h3>
-      <iframe src="https://www.youtube.com/embed/g7ktCo2sWbY" title="How to Restart Your TV Box" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/g7ktCo2sWbY" 
+              title="How to Restart Your TV Box" frameborder="0" allowfullscreen></iframe>
     </div>
+
     <div class="video-container">
       <h3>3. Saving and Removing Favorites/My List</h3>
-      <iframe src="https://www.youtube.com/embed/eYSx1y1yrZs" title="Saving and Removing Favorites/My List" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/eYSx1y1yrZs" 
+              title="Saving and Removing Favorites/My List" frameborder="0" allowfullscreen></iframe>
     </div>
+
     <div class="video-container">
       <h3>4. Checking Service Issues</h3>
-      <iframe src="https://www.youtube.com/embed/OUa86Z-gPZs" title="Checking Service Issues" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/OUa86Z-gPZs" 
+              title="Checking Service Issues" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 
@@ -224,13 +295,20 @@
     <a href="https://wa.me/527773638436" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
   </div>
 
-  <!-- Search Results Modal -->
+  <!-- NEW ANIMATED SEARCH RESULTS MODAL -->
   <div id="searchModal" class="modal">
     <div class="modal-content">
       <span id="closeModal" class="close">&times;</span>
+
       <h2>Search Results</h2>
       <p id="modalSummary"></p>
+
+      <!-- Search Results List -->
       <ul id="modalResults"></ul>
+
+      <!-- Language Table (injected by JS in Part 3) -->
+      <table class="lang-table" id="langTable"></table>
+
     </div>
   </div>
 
@@ -244,13 +322,40 @@
     <a href="/legal/dmca.html">DMCA Notice</a>
   </p>
 </footer>
-
 <script>
+/* Load JSON helper */
 async function loadJSON(file) {
   const response = await fetch(file);
   return response.json();
 }
 
+/* Language Code Table Data */
+const languageCodes = [
+  ["EN", "English"],
+  ["ES", "Spanish"],
+  ["FR", "French"],
+  ["DE", "German"],
+  ["IT", "Italian"],
+  ["PT", "Portuguese"],
+  ["TR", "Turkish"],
+  ["AR", "Arabic"],
+  ["NL", "Dutch"],
+  ["SW", "Swedish"],
+  ["LT", "Lithuanian"]
+];
+
+/* Inject Language Table into Modal */
+function populateLanguageTable() {
+  const table = document.getElementById("langTable");
+  table.innerHTML = `
+    <tr><th>Code</th><th>Language</th></tr>
+    ${languageCodes
+      .map(row => `<tr><td>${row[0]}</td><td>${row[1]}</td></tr>`)
+      .join("")}
+  `;
+}
+
+/* Handle Search Submission */
 document.getElementById("searchForm").addEventListener("submit", async function(e) {
   e.preventDefault();
 
@@ -259,40 +364,61 @@ document.getElementById("searchForm").addEventListener("submit", async function(
 
   let results = [];
 
+  /* Load and filter LIVE */
   if (category === "all" || category === "live") {
     const live = await loadJSON("live.json");
     results.push(...live.filter(item => item.title.toLowerCase().includes(query)));
   }
 
+  /* Load and filter MOVIES */
   if (category === "all" || category === "movies") {
     const movies = await loadJSON("movies.json");
     results.push(...movies.filter(item => item.title.toLowerCase().includes(query)));
   }
 
+  /* Load and filter SERIES */
   if (category === "all" || category === "series") {
     const series = await loadJSON("series.json");
     results.push(...series.filter(item => item.title.toLowerCase().includes(query)));
   }
 
+  /* Update summary */
   document.getElementById("modalSummary").textContent =
     `Found ${results.length} result(s) for "${query}"`;
 
-  document.getElementById("modalResults").innerHTML =
-    results.map(item => `<li>${item.title}</li>`).join("");
+  /* Populate results with staggered animation */
+  const list = document.getElementById("modalResults");
+  list.innerHTML = "";
 
-  document.getElementById("searchModal").style.display = "block";
+  results.forEach((item, i) => {
+    const li = document.createElement("li");
+    li.textContent = item.title;
+    li.style.animationDelay = (i * 0.05) + "s";
+    list.appendChild(li);
+  });
+
+  /* Inject Language Table */
+  populateLanguageTable();
+
+  /* Show modal with animation */
+  const modal = document.getElementById("searchModal");
+  modal.classList.add("show");
 });
 
+/* Close Modal */
 document.getElementById("closeModal").onclick = function() {
-  document.getElementById("searchModal").style.display = "none";
+  document.getElementById("searchModal").classList.remove("show");
 };
 
+/* Close when clicking outside modal */
 window.onclick = function(event) {
-  if (event.target === document.getElementById("searchModal")) {
-    document.getElementById("searchModal").style.display = "none";
+  const modal = document.getElementById("searchModal");
+  if (event.target === modal) {
+    modal.classList.remove("show");
   }
 };
 </script>
 
 </body>
 </html>
+
