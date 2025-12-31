@@ -418,48 +418,122 @@ const languageCodes=[
 ];
 
 /* -------------------------------------------------- */
-/* Build Language Table                                */
+/* Language Name → Code Normalization                  */
+/* -------------------------------------------------- */
+const languageNameToCode = {
+  english:"EN", spanish:"ES", french:"FR", german:"DE", italian:"IT",
+  portuguese:"PT", turkish:"TR", arabic:"AR", dutch:"NL", swedish:"SW",
+  lithuanian:"LT", albanian:"SQ", hindi:"HI", bengali:"BN", japanese:"JA",
+  javanese:"JV", korean:"KO", marathi:"MR", punjabi:"PA", tamil:"TA",
+  telugu:"TE", urdu:"UR", vietnamese:"VI", chinese:"ZH"
+};
+
+/* -------------------------------------------------- */
+/* Build Language Table (Counts + Sorting + Clickable) */
 /* -------------------------------------------------- */
 function populateLanguageTable(results) {
   const table = document.getElementById("langTable");
 
+  // Extract normalized language codes
   const langs = results
-    .map(r => r.language?.toString().trim().replace(/[^A-Za-z]/g,"").slice(0,2).toUpperCase())
+    .map(r => {
+      const raw = r.language?.toString().trim().toLowerCase();
+      if (!raw) return null;
+
+      if (languageNameToCode[raw]) return languageNameToCode[raw];
+
+      return raw.replace(/[^a-z]/g,"").slice(0,2).toUpperCase();
+    })
     .filter(Boolean);
 
-  const uniqueLangs = [...new Set(langs)];
-
-  if (uniqueLangs.length === 0) {
+  if (langs.length === 0) {
     table.innerHTML = "";
     return;
   }
 
-  const rows = uniqueLangs
-    .map(code => {
-      const match = languageCodes.find(l => l[0] === code);
-      return match
-        ? `<tr><td>${match[0]}</td><td>${match[1]}</td></tr>`
-        : `<tr><td>${code}</td><td>Unknown</td></tr>`;
-    })
-    .join("");
+  // Count frequency
+  const counts = {};
+  langs.forEach(code => counts[code] = (counts[code] || 0) + 1);
+
+  // Sort by frequency (descending)
+  const sortedCodes = Object.keys(counts).sort((a,b) => counts[b] - counts[a]);
+
+  // Build table rows
+  const rows = sortedCodes.map(code => {
+    const match = languageCodes.find(l => l[0] === code);
+    const name = match ? match[1] : "Unknown";
+    const count = counts[code];
+
+    return `
+      <tr class="lang-row" data-lang="${code}">
+        <td>${code}</td>
+        <td>${name}</td>
+        <td>${count}</td>
+      </tr>
+    `;
+  }).join("");
 
   table.innerHTML = `
-    <tr><th>Code</th><th>Language</th></tr>
+    <tr><th>Code</th><th>Language</th><th>Count</th></tr>
     ${rows}
+    <tr class="lang-reset"><td colspan="3" style="text-align:center;cursor:pointer;color:#0066cc;">Reset Filter</td></tr>
   `;
+
+  // Add click handlers
+  document.querySelectorAll(".lang-row").forEach(row => {
+    row.addEventListener("click", () => {
+      const code = row.dataset.lang;
+      filterResultsByLanguage(code);
+    });
+  });
+
+  document.querySelector(".lang-reset").addEventListener("click", () => {
+    rebuildResultsList(results);
+  });
 }
 
 /* -------------------------------------------------- */
-/* Dark Mode Toggle                                    */
+/* Filter Results by Language                          */
 /* -------------------------------------------------- */
-const themeToggleBtn = document.getElementById("themeToggle");
-if (themeToggleBtn) {
-  themeToggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    themeToggleBtn.textContent =
-      document.body.classList.contains("dark-mode")
-        ? "Light mode"
-        : "Dark mode";
+function filterResultsByLanguage(code) {
+  const list = document.getElementById("modalResults");
+
+  const filtered = window._allResults.filter(r => {
+    const raw = r.language?.toString().trim().toLowerCase();
+    if (!raw) return false;
+
+    if (languageNameToCode[raw] === code) return true;
+
+    const sliced = raw.replace(/[^a-z]/g,"").slice(0,2).toUpperCase();
+    return sliced === code;
+  });
+
+  rebuildResultsList(filtered);
+}
+
+/* -------------------------------------------------- */
+/* Rebuild Results List                                */
+/* -------------------------------------------------- */
+function rebuildResultsList(results) {
+  const list = document.getElementById("modalResults");
+  list.innerHTML = "";
+
+  results.forEach((item, i) => {
+    const meta = categoryMeta[item.category] || { icon: "", label: item.category };
+    const langBadge = item.language
+      ? `<span class="lang-badge">[${item.language.toUpperCase()}]</span>`
+      : "";
+
+    const li = document.createElement("li");
+    li.style.animationDelay = (i * 0.05) + "s";
+
+    li.innerHTML = `
+      <span class="result-icon">${meta.icon}</span>
+      <span class="result-title">${item.title}</span>
+      <span class="result-meta">${langBadge} ${meta.label}</span>
+    `;
+
+    list.appendChild(li);
   });
 }
 
@@ -493,7 +567,7 @@ document.getElementById("searchForm").addEventListener("submit", async function(
     </li>
   `;
 
-  if (!modal.classList.contains("show")) modal.classList.add("show");
+  modal.classList.add("show");
   document.body.classList.add("modal-open");
 
   let results = [];
@@ -522,36 +596,14 @@ document.getElementById("searchForm").addEventListener("submit", async function(
 
   summary.textContent = `Found ${results.length} result(s) for "${query}"`;
 
+  // Store globally for filtering
+  window._allResults = results;
+
+  // Build language table
   populateLanguageTable(results);
 
-  if (results.length === 0) {
-    list.innerHTML = `
-      <li class="no-results">
-        No results found.
-        <small>Try a different word or pick a different category.</small>
-      </li>
-    `;
-    return;
-  }
-
-  list.innerHTML = "";
-  results.forEach((item, i) => {
-    const meta = categoryMeta[item.category] || { icon: "", label: item.category };
-    const langBadge = item.language
-      ? `<span class="lang-badge">[${item.language.toUpperCase()}]</span>`
-      : "";
-
-    const li = document.createElement("li");
-    li.style.animationDelay = (i * 0.05) + "s";
-
-    li.innerHTML = `
-      <span class="result-icon">${meta.icon}</span>
-      <span class="result-title">${item.title}</span>
-      <span class="result-meta">${langBadge} ${meta.label}</span>
-    `;
-
-    list.appendChild(li);
-  });
+  // Build results list
+  rebuildResultsList(results);
 });
 
 /* -------------------------------------------------- */
@@ -580,7 +632,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".video-container iframe").forEach(iframe => {
     iframe.addEventListener("click", () => {
-      if (!modal.classList.contains("show")) modal.classList.add("show");
+      modal.classList.add("show");
       modalVideo.src = iframe.src + "?autoplay=1";
       document.body.classList.add("modal-open");
     });
