@@ -437,13 +437,37 @@ const languageCodes = [
   ["LT", "Lithuanian"]
 ];
 
-function populateLanguageTable() {
+/* -------------------------------------------------- */
+/* Build Language Table Based on Search Results        */
+/* -------------------------------------------------- */
+function populateLanguageTable(results) {
   const table = document.getElementById("langTable");
+
+  // Extract languages from results
+  const langs = results
+    .map(r => r.language?.toUpperCase())
+    .filter(Boolean);
+
+  // Remove duplicates
+  const uniqueLangs = [...new Set(langs)];
+
+  // If no languages found, clear table
+  if (uniqueLangs.length === 0) {
+    table.innerHTML = "";
+    return;
+  }
+
+  // Build table rows only for languages that appear in results
+  const rows = uniqueLangs
+    .map(code => {
+      const match = languageCodes.find(l => l[0] === code);
+      return match ? `<tr><td>${match[0]}</td><td>${match[1]}</td></tr>` : "";
+    })
+    .join("");
+
   table.innerHTML = `
     <tr><th>Code</th><th>Language</th></tr>
-    ${languageCodes
-      .map(row => `<tr><td>${row[0]}</td><td>${row[1]}</td></tr>`)
-      .join("")}
+    ${rows}
   `;
 }
 
@@ -491,7 +515,6 @@ document.getElementById("searchForm").addEventListener("submit", async function(
     </li>
   `;
 
-  populateLanguageTable();
   modal.classList.add("show");
 
   let results = [];
@@ -519,6 +542,9 @@ document.getElementById("searchForm").addEventListener("submit", async function(
   }
 
   summary.textContent = `Found ${results.length} result(s) for "${query}"`;
+
+  /* NEW: Build language table based on results */
+  populateLanguageTable(results);
 
   if (results.length === 0) {
     list.innerHTML = `
@@ -600,4 +626,3 @@ document.addEventListener("keydown", e => {
   }
 });
 </script>
-
