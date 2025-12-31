@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Cuernavaca IPTV Service</title>
+
   <style>
   body {
     font-family: Arial, sans-serif;
@@ -13,101 +12,87 @@
     color: #000000;
     transition: background 0.25s ease, color 0.25s ease;
   }
+
   h1, h2 {
     border-bottom: 2px solid #333;
     padding-bottom: 5px;
   }
-  ul { 
-    margin-left: 20px; 
+
+  ul { margin-left: 20px; }
+  ul li { margin-bottom: 10px; }
+
+  a { text-decoration: none; color: #0066cc; }
+  a:hover { text-decoration: underline; }
+
+  p.breadcrumb { font-size: 0.9em; color: #555; margin-top: 5px; }
+
+  footer {
+    margin-top: 40px;
+    font-size: 0.8em;
+    color: #777;
+    text-align: center;
   }
-  ul li {
-    margin-bottom: 10px;
-  }
-  a { 
-    text-decoration: none; 
-    color: #0066cc; 
-  }
-  a:hover { 
-    text-decoration: underline; 
-  }
-  p.breadcrumb { 
-    font-size: 0.9em; 
-    color: #555; 
-    margin-top: 5px; 
-  }
-  footer { 
-    margin-top: 40px; 
-    font-size: 0.8em; 
-    color: #777; 
-    text-align: center; 
-  }
-  hr { 
-    margin: 20px 0; 
-    border: none; 
-    border-top: 1px solid #ccc; 
-  }
-  .contact-box { 
-    margin-top: 40px; 
-    padding: 20px; 
-    background-color: #f9f9f9; 
-    border: 1px solid #ddd; 
+
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ccc; }
+
+  .contact-box {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
     border-radius: 8px;
   }
-  .contact-box h2 { 
-    margin-top: 0; 
+
+  .contact-box a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
   }
-  .contact-box a { 
-    display: inline-block; 
-    padding: 10px 20px; 
-    background-color: #25D366; 
-    color: white; 
-    text-decoration: none; 
-    border-radius: 5px; 
-    font-weight: bold; 
-  }
-  .contact-box a:hover { 
-    background-color: #1ebe57; 
-  }
+
   .video-section {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
   }
+
   .video-container {
     flex: 1 1 45%;
     min-width: 300px;
   }
-  .video-container h3 {
-    margin-bottom: 10px;
-  }
+
   .video-container iframe {
     width: 100%;
     aspect-ratio: 16/9;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    cursor: pointer;
   }
+
   .search-box {
     text-align: center;
     margin: 20px 0;
   }
-  .search-box input, 
-  .search-box select, 
+
+  .search-box input,
+  .search-box select,
   .search-box button {
     padding: 10px;
     margin: 5px;
     font-size: 1em;
   }
+
   .search-box button {
     background-color: #0066cc;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.2s ease;
   }
-  .search-box button:hover {
-    background-color: #004999;
-  }
+
   .disclaimer {
     background: #f1f1f1;
     padding: 10px;
@@ -117,11 +102,7 @@
     color: #444;
   }
 
-  /* Dark mode toggle */
-  .theme-toggle {
-    text-align: right;
-    margin-bottom: 10px;
-  }
+  .theme-toggle { text-align: right; margin-bottom: 10px; }
   .theme-toggle button {
     padding: 6px 12px;
     font-size: 0.9em;
@@ -129,80 +110,79 @@
     border: 1px solid #ccc;
     cursor: pointer;
     background: #f5f5f5;
-    transition: background 0.2s ease, color 0.2s ease;
   }
-  .theme-toggle button:hover {
-    background: #e0e0e0;
-  }
+
   .site-logo {
-    height: 60px;   /* sweet spot for headers */
+    height: 60px;
     width: auto;
     display: block;
-}
+  }
 
   /* -------------------------------------------------- */
-  /* ANIMATED MODAL SYSTEM (Option A — Subtle + Clean)  */
+  /* UNIVERSAL MODAL SYSTEM (Search + Video)            */
   /* -------------------------------------------------- */
 
-  /* Modal Background */
   .modal {
     display: none;
     position: fixed;
     z-index: 9999;
-    left: 0;
-    top: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.0);
+    background: rgba(0,0,0,0);
     opacity: 0;
     transition: opacity 0.25s ease;
   }
+
   .modal.show {
     display: block;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.75);
     opacity: 1;
   }
 
-  /* Modal Box */
   .modal-content {
     background: white;
-    margin: 8% auto;
+    margin: 60px auto;
     padding: 20px;
-    width: 80%;
-    max-width: 600px;
-    max-height: 80vh;            /* scrollable modal */
-    overflow-y: auto;
+    width: 90%;
+    max-width: 1200px;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
-    transform: translateY(20px) scale(0.95);
+    transform: scale(0.92);
     opacity: 0;
     transition: all 0.25s ease;
   }
+
   .modal.show .modal-content {
-    transform: translateY(0) scale(1);
+    transform: scale(1);
     opacity: 1;
   }
 
-  /* Close Button */
+  /* Fixed close button */
   .close {
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
     cursor: pointer;
-    transition: color 0.2s ease;
-  }
-  .close:hover {
-    color: #cc0000;
+    z-index: 10000;
+    text-shadow: 0 0 10px black;
   }
 
-  /* Result list styling */
+  /* Video modal iframe */
+  #modalVideo {
+    width: 100%;
+    height: 70vh;
+    border-radius: 10px;
+  }
+
+  /* Search results list */
   #modalResults {
     list-style: none;
     padding-left: 0;
     margin: 10px 0;
   }
 
-  /* Animated list items */
   #modalResults li {
     opacity: 0;
     transform: translateY(10px);
@@ -212,37 +192,16 @@
     align-items: center;
     gap: 6px;
   }
+
   @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Hover effect */
-  #modalResults li:hover {
-    background: #f0f0f0;
-    border-radius: 5px;
-    padding-left: 8px;
-    transition: all 0.2s ease;
-  }
+  .result-icon { width: 22px; text-align: center; }
+  .result-title { font-weight: bold; flex-grow: 1; }
+  .result-meta { font-size: 0.8em; color: #555; white-space: nowrap; }
 
-  .result-icon {
-    width: 22px;
-    text-align: center;
-    flex-shrink: 0;
-  }
-  .result-title {
-    font-weight: bold;
-    flex-grow: 1;
-  }
-  .result-meta {
-    font-size: 0.8em;
-    color: #555;
-    white-space: nowrap;
-  }
   .lang-badge {
-    display: inline-block;
     padding: 2px 6px;
     border-radius: 10px;
     background: #e0e7ff;
@@ -250,28 +209,14 @@
     margin-right: 4px;
   }
 
-  /* No results styling */
   .no-results {
     opacity: 1 !important;
     transform: none !important;
     text-align: center;
     color: #666;
     font-style: italic;
-    flex-direction: column;
-  }
-  .no-results small {
-    display: block;
-    margin-top: 4px;
-    font-size: 0.85em;
   }
 
-  /* Loading state */
-  .loading {
-    opacity: 1 !important;
-    transform: none !important;
-    justify-content: center;
-    gap: 10px;
-  }
   .spinner {
     width: 18px;
     height: 18px;
@@ -280,129 +225,43 @@
     border-radius: 50%;
     animation: spin 0.7s linear infinite;
   }
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
 
-  /* --------------------------------------------- */
-  /* LANGUAGE TABLE (Option A — Compact 2-column)  */
-  /* --------------------------------------------- */
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Language table */
   .lang-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
   }
-  .lang-table th, .lang-table td {
+
+  .lang-table th,
+  .lang-table td {
     border: 1px solid #ccc;
     padding: 8px;
-    text-align: left;
-  }
-  .lang-table th {
-    background: #f2f2f2;
-    font-weight: bold;
   }
 
-  /* --------------------------------------------- */
-  /* DARK MODE STYLES                              */
-  /* --------------------------------------------- */
+  .lang-table th { background: #f2f2f2; }
+
+  /* Dark mode */
   body.dark-mode {
     background: #111827;
     color: #e5e7eb;
   }
-  body.dark-mode h1, 
-  body.dark-mode h2 {
-    border-bottom-color: #4b5563;
-  }
-  body.dark-mode a {
-    color: #60a5fa;
-  }
-  body.dark-mode a:hover {
-    color: #93c5fd;
-  }
-  body.dark-mode .disclaimer {
-    background: #111827;
-    border-left-color: #4b5563;
-    color: #d1d5db;
-  }
-  body.dark-mode .contact-box {
-    background-color: #1f2937;
-    border-color: #374151;
-  }
+
   body.dark-mode .modal-content {
-    background: #111827;
-    color: #e5e7eb;
-  }
-  body.dark-mode #modalResults li:hover {
     background: #1f2937;
-  }
-  body.dark-mode .lang-table th {
-    background: #1f2937;
-  }
-  body.dark-mode .lang-table td {
-    border-color: #374151;
-  }
-  body.dark-mode .lang-badge {
-    background: #1d4ed8;
     color: #e5e7eb;
   }
-  body.dark-mode footer {
-    color: #9ca3af;
-  }
-  body.dark-mode .theme-toggle button {
-    background: #374151;
-    color: #e5e7eb;
-    border-color: #4b5563;
-  }
-  body.dark-mode .theme-toggle button:hover {
-    background: #4b5563;
-  }
 
-/* Modal background */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.85);
-}
-
-/* Centered modal content */
-.modal-content {
-  position: relative;
-  margin: 40px auto;
-  width: 90%;
-  max-width: 1200px;
-}
-
-/* Full-width video */
-#modalVideo {
-  width: 100%;
-  height: 70vh;
-}
-
-/* Close button */
-.close {
-  position: absolute;
-  top: -10px;
-  right: 10px;
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
-}
-
-</style>
-
+  </style>
 </head>
 <body>
-<body>
+
 <div class="theme-toggle">
   <button id="themeToggle">Dark mode</button>
 </div>
+
 <main class="header">
   <a href="/">
     <img src="CTVS Logo.png" alt="Cuernavaca IPTV Service Logo" class="site-logo">
@@ -410,138 +269,139 @@
   <p class="breadcrumb">Home</p>
 </main>
 
-
-  
-  <!-- Compliance Disclaimer -->
-  <div class="disclaimer">
-    This website is for informational and educational purposes only. 
-    No television channels, movies, or streams are hosted or provided here.
-  </div>
+<!-- Compliance Disclaimer -->
+<div class="disclaimer">
+  This website is for informational and educational purposes only. 
+  No television channels, movies, or streams are hosted or provided here.
+</div>
 
 <section class="iptv-faq">
-    <h2>IPTV FAQ</h2>
+  <h2>IPTV FAQ</h2>
 
-    <h3>What is IPTV?</h3>
-    <ul>
-        <li>TV delivered through your <strong>internet connection</strong> instead of cable or satellite.</li>
-    </ul>
+  <h3>What is IPTV?</h3>
+  <ul>
+    <li>TV delivered through your <strong>internet connection</strong> instead of cable or satellite.</li>
+  </ul>
 
-    <h3>How do I watch it?</h3>
-    <ul>
-        <li>This is something that can be dependent upon <strong> many different factors </strong>.  It is usually done via a TV box or another device, and use various different programs such as TiviMate, IPTVSmarters, M-Tivi, Sparkle TV, etc.</li>
-    </ul>
+  <h3>How do I watch it?</h3>
+  <ul>
+    <li>This is something that can be dependent upon <strong>many different factors</strong>. It is usually done via a TV box or another device, and uses various different programs such as TiviMate, IPTVSmarters, M‑Tivi, Sparkle TV, etc.</li>
+  </ul>
 
-    <h3>Is it like Netflix?</h3>
-    <ul>
-        <li>Not exactly, IPTV usually includes <strong>live TV</strong> plus <strong>on‑demand movies and shows</strong>.</li>
-    </ul>
+  <h3>Is it like Netflix?</h3>
+  <ul>
+    <li>Not exactly, IPTV usually includes <strong>live TV</strong> plus <strong>on‑demand movies and shows</strong>.</li>
+  </ul>
 
-    <h3>Does this page provide IPTV service?</h3>
-    <ul>
-        <li>No.This page is <strong>informational only</strong> and does not host or sell any channels.</li>
-    </ul>
+  <h3>Does this page provide IPTV service?</h3>
+  <ul>
+    <li>No. This page is <strong>informational only</strong> and does not host or sell any channels.</li>
+  </ul>
 </section>
 
+<hr><hr>
 
-  <hr>
+<section class="iptv-faq">
+  <h2>What’s Available with IPTV?</h2>
+
+  <h3>Available Content</h3>
+  <ul>
+    <li>You can browse the categories below to see what’s offered. You can also use the search function to quickly check if specific content is available.</li>
+  </ul>
+
+  <h3>Browse Categories</h3>
+  <ul>
+    <li><a href="live.html">Live TV Stations</a></li>
+    <li><a href="movies.html">Movies on Demand</a></li>
+    <li><a href="series.html">TV Series on Demand</a></li>
+  </ul>
+</section>
+
 <hr>
 
-<section class="iptv-faq">
-    <h2>What’s Available with IPTV?</h2>
+<!-- Search Section -->
+<div class="search-box">
+  <form id="searchForm">
+    <input type="text" id="searchInput" placeholder="Search..." required>
+    <select id="categorySelect">
+      <option value="all">All</option>
+      <option value="live">Live</option>
+      <option value="movies">Movies</option>
+      <option value="series">Series</option>
+    </select>
+    <button type="submit">Search</button>
+  </form>
+</div>
 
-    <h3>Available Content</h3>
-    <ul>
-        <li>You can browse the categories below to see what’s offered. You can also use the search function to quickly check if specific content is available.</li>
-    </ul>
+<hr>
 
-    <h3>Browse Categories</h3>
-    <ul>
-        <li><a href="live.html">Live TV Stations</a></li>
-        <li><a href="movies.html">Movies on Demand</a></li>
-        <li><a href="series.html">TV Series on Demand</a></li>
-    </ul>
-</section>
+<h2>Coming Soon</h2>
+<p>This section is currently under construction and will be expanded in the near future.</p>
+<p>Expected additions include troubleshooting guidance, step‑by‑step directions for using IPTV apps, 
+static documentation, and instructional videos.</p>
 
-  <hr>
+<hr>
 
-  <!-- Search Section -->
-  <div class="search-box">
-    <form id="searchForm">
-      <input type="text" id="searchInput" placeholder="Search..." required>
-      <select id="categorySelect">
-        <option value="all">All</option>
-        <option value="live">Live</option>
-        <option value="movies">Movies</option>
-        <option value="series">Series</option>
-      </select>
-      <button type="submit">Search</button>
-    </form>
+<h2>Troubleshooting & How‑To Videos</h2>
+<div class="video-section">
+
+  <div class="video-container">
+    <h3>1. How to Use Voice Search</h3>
+    <iframe src="https://www.youtube.com/embed/jNB7AjbITY4"
+            title="How to Use Voice Search" frameborder="0" allowfullscreen></iframe>
   </div>
 
-  <hr>
-
-  <h2>Coming Soon</h2>
-  <p>This section is currently under construction and will be expanded in the near future.</p>
-  <p>Expected additions include troubleshooting guidance, step‑by‑step directions for using IPTV apps, 
-  static documentation, and instructional videos.</p>
-
-  <hr>
-
-  <h2>Troubleshooting & How-To Videos</h2>
-  <div class="video-section">
-    <div class="video-container">
-      <h3>1. How to Use Voice Search</h3>
-      <iframe src="https://www.youtube.com/embed/jNB7AjbITY4" 
-              title="How to Use Voice Search" frameborder="0" allowfullscreen></iframe>
-    </div>
-
-    <div class="video-container">
-      <h3>2. How to Restart Your TV Box</h3>
-      <iframe src="https://www.youtube.com/embed/g7ktCo2sWbY" 
-              title="How to Restart Your TV Box" frameborder="0" allowfullscreen></iframe>
-    </div>
-
-    <div class="video-container">
-      <h3>3. Saving and Removing Favorites/My List</h3>
-      <iframe src="https://www.youtube.com/embed/eYSx1y1yrZs" 
-              title="Saving and Removing Favorites/My List" frameborder="0" allowfullscreen></iframe>
-    </div>
-
-    <div class="video-container">
-      <h3>4. Checking Service Issues</h3>
-      <iframe src="https://www.youtube.com/embed/OUa86Z-gPZs" 
-              title="Checking Service Issues" frameborder="0" allowfullscreen></iframe>
-    </div>
+  <div class="video-container">
+    <h3>2. How to Restart Your TV Box</h3>
+    <iframe src="https://www.youtube.com/embed/g7ktCo2sWbY"
+            title="How to Restart Your TV Box" frameborder="0" allowfullscreen></iframe>
   </div>
 
-  <!-- WhatsApp Contact Box -->
-  <div class="contact-box">
-    <h2>Contact</h2>
-    <p>
-      You can reach out to me if you have any customer questions on WhatsApp text messages.<br>
-      No hablo español. I speak "Google Translate".
-    </p>
-    <a href="https://wa.me/527773638436" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+  <div class="video-container">
+    <h3>3. Saving and Removing Favorites/My List</h3>
+    <iframe src="https://www.youtube.com/embed/eYSx1y1yrZs"
+            title="Saving and Removing Favorites/My List" frameborder="0" allowfullscreen></iframe>
   </div>
 
-  <!-- NEW ANIMATED SEARCH RESULTS MODAL -->
-  <div id="searchModal" class="modal">
-    <div class="modal-content">
-      <span id="closeModal" class="close">&times;</span>
-
-      <h2>Search Results</h2>
-      <p id="modalSummary"></p>
-
-      <!-- Search Results List -->
-      <ul id="modalResults"></ul>
-
-      <!-- Language Table (injected by JS in Part 3) -->
-      <table class="lang-table" id="langTable"></table>
-
-    </div>
+  <div class="video-container">
+    <h3>4. Checking Service Issues</h3>
+    <iframe src="https://www.youtube.com/embed/OUa86Z-gPZs"
+            title="Checking Service Issues" frameborder="0" allowfullscreen></iframe>
   </div>
 
-</main>
+</div>
+
+<!-- WhatsApp Contact Box -->
+<div class="contact-box">
+  <h2>Contact</h2>
+  <p>
+    You can reach out to me if you have any customer questions on WhatsApp text messages.<br>
+    No hablo español. I speak "Google Translate".
+  </p>
+  <a href="https://wa.me/527773638436" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+</div>
+
+<!-- SEARCH RESULTS MODAL -->
+<div id="searchModal" class="modal">
+  <div class="modal-content">
+    <span id="closeSearchModal" class="close">&times;</span>
+
+    <h2>Search Results</h2>
+    <p id="modalSummary"></p>
+
+    <ul id="modalResults"></ul>
+
+    <table class="lang-table" id="langTable"></table>
+  </div>
+</div>
+
+<!-- VIDEO MODAL -->
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span id="closeVideoModal" class="close">&times;</span>
+    <iframe id="modalVideo" src="" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
 
 <footer>
   <p>Cuernavaca IPTV Service © 2025 Cuernavaca IPTV Service. All rights reserved.</p>
@@ -552,13 +412,17 @@
   </p>
 </footer>
 <script>
-/* Load JSON helper */
+/* -------------------------------------------------- */
+/* JSON Loader                                         */
+/* -------------------------------------------------- */
 async function loadJSON(file) {
   const response = await fetch(file);
   return response.json();
 }
 
-/* Language Code Table Data */
+/* -------------------------------------------------- */
+/* Language Table Data                                 */
+/* -------------------------------------------------- */
 const languageCodes = [
   ["EN", "English"],
   ["ES", "Spanish"],
@@ -573,7 +437,6 @@ const languageCodes = [
   ["LT", "Lithuanian"]
 ];
 
-/* Inject Language Table into Modal */
 function populateLanguageTable() {
   const table = document.getElementById("langTable");
   table.innerHTML = `
@@ -584,25 +447,32 @@ function populateLanguageTable() {
   `;
 }
 
-/* Dark mode toggle */
+/* -------------------------------------------------- */
+/* Dark Mode Toggle                                    */
+/* -------------------------------------------------- */
 const themeToggleBtn = document.getElementById("themeToggle");
 if (themeToggleBtn) {
   themeToggleBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
-    themeToggleBtn.textContent = document.body.classList.contains("dark-mode")
-      ? "Light mode"
-      : "Dark mode";
+    themeToggleBtn.textContent =
+      document.body.classList.contains("dark-mode")
+        ? "Light mode"
+        : "Dark mode";
   });
 }
 
-/* Icons and labels per category */
+/* -------------------------------------------------- */
+/* Category Icons                                      */
+/* -------------------------------------------------- */
 const categoryMeta = {
   live:   { icon: "📺", label: "LIVE" },
   movies: { icon: "🎬", label: "MOVIES" },
   series: { icon: "📚", label: "SERIES" }
 };
 
-/* Handle Search Submission */
+/* -------------------------------------------------- */
+/* SEARCH FORM HANDLER                                 */
+/* -------------------------------------------------- */
 document.getElementById("searchForm").addEventListener("submit", async function(e) {
   e.preventDefault();
 
@@ -613,7 +483,6 @@ document.getElementById("searchForm").addEventListener("submit", async function(
   const list = document.getElementById("modalResults");
   const modal = document.getElementById("searchModal");
 
-  // Reset and show loading state
   summary.textContent = `Searching for "${query}"...`;
   list.innerHTML = `
     <li class="loading">
@@ -621,12 +490,12 @@ document.getElementById("searchForm").addEventListener("submit", async function(
       <div>Loading results…</div>
     </li>
   `;
+
   populateLanguageTable();
   modal.classList.add("show");
 
   let results = [];
 
-  // Helper to push results with category metadata
   async function fetchAndFilter(file, catKey) {
     const data = await loadJSON(file);
     const filtered = data
@@ -640,30 +509,17 @@ document.getElementById("searchForm").addEventListener("submit", async function(
   }
 
   try {
-    if (category === "all" || category === "live") {
-      await fetchAndFilter("live.json", "live");
-    }
-    if (category === "all" || category === "movies") {
-      await fetchAndFilter("movies.json", "movies");
-    }
-    if (category === "all" || category === "series") {
-      await fetchAndFilter("series.json", "series");
-    }
-  } catch (err) {
+    if (category === "all" || category === "live")   await fetchAndFilter("live.json", "live");
+    if (category === "all" || category === "movies") await fetchAndFilter("movies.json", "movies");
+    if (category === "all" || category === "series") await fetchAndFilter("series.json", "series");
+  } catch {
     summary.textContent = "There was an error loading search data.";
-    list.innerHTML = `
-      <li class="no-results">
-        Unable to load results.
-        <small>Please try again later.</small>
-      </li>
-    `;
+    list.innerHTML = `<li class="no-results">Unable to load results.</li>`;
     return;
   }
 
-  // Update summary
   summary.textContent = `Found ${results.length} result(s) for "${query}"`;
 
-  // No results state
   if (results.length === 0) {
     list.innerHTML = `
       <li class="no-results">
@@ -674,13 +530,11 @@ document.getElementById("searchForm").addEventListener("submit", async function(
     return;
   }
 
-  // Populate results with icons, category labels, language badges, and staggered animation
   list.innerHTML = "";
   results.forEach((item, i) => {
-    const meta = categoryMeta[item.category] || { icon: "", label: item.category || "" };
-    const lang = item.language;
-    const langBadge = lang
-      ? `<span class="lang-badge">[${lang.toUpperCase()}]</span>`
+    const meta = categoryMeta[item.category] || { icon: "", label: item.category };
+    const langBadge = item.language
+      ? `<span class="lang-badge">[${item.language.toUpperCase()}]</span>`
       : "";
 
     const li = document.createElement("li");
@@ -689,68 +543,61 @@ document.getElementById("searchForm").addEventListener("submit", async function(
     li.innerHTML = `
       <span class="result-icon">${meta.icon}</span>
       <span class="result-title">${item.title}</span>
-      <span class="result-meta">
-        ${langBadge}
-        ${meta.label}
-      </span>
+      <span class="result-meta">${langBadge} ${meta.label}</span>
     `;
 
     list.appendChild(li);
   });
 });
 
-/* Close Search Modal */
-document.getElementById("closeSearchModal").onclick = function() {
+/* -------------------------------------------------- */
+/* SEARCH MODAL CLOSE                                  */
+/* -------------------------------------------------- */
+document.getElementById("closeSearchModal").onclick = () =>
   document.getElementById("searchModal").classList.remove("show");
-};
 
-/* Close search modal when clicking outside */
-window.addEventListener("click", function(event) {
+window.addEventListener("click", e => {
   const modal = document.getElementById("searchModal");
-  if (event.target === modal) {
-    modal.classList.remove("show");
-  }
+  if (e.target === modal) modal.classList.remove("show");
 });
-</script>
 
-<!-- VIDEO MODAL SCRIPT -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+/* -------------------------------------------------- */
+/* VIDEO MODAL                                         */
+/* -------------------------------------------------- */
+document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("videoModal");
   const modalVideo = document.getElementById("modalVideo");
   const closeBtn = document.getElementById("closeVideoModal");
 
-  // Attach click handler to every iframe in .video-container
   document.querySelectorAll(".video-container iframe").forEach(iframe => {
-    iframe.style.cursor = "pointer";
-
     iframe.addEventListener("click", () => {
-      modal.style.display = "block";
+      modal.classList.add("show");
       modalVideo.src = iframe.src + "?autoplay=1";
     });
   });
 
-  // Close modal
-  closeBtn.onclick = function () {
-    modal.style.display = "none";
+  closeBtn.onclick = () => {
+    modal.classList.remove("show");
     modalVideo.src = "";
   };
 
-  // Close when clicking outside video
-  window.addEventListener("click", function (event) {
-    if (event.target === modal) {
-      modal.style.display = "none";
+  window.addEventListener("click", e => {
+    if (e.target === modal) {
+      modal.classList.remove("show");
       modalVideo.src = "";
     }
   });
 });
-</script>
 
-<!-- VIDEO MODAL HTML -->
-<div id="videoModal" class="modal">
-  <div class="modal-content">
-    <span id="closeVideoModal" class="close">&times;</span>
-    <iframe id="modalVideo" src="" frameborder="0" allowfullscreen></iframe>
-  </div>
-</div>
+/* -------------------------------------------------- */
+/* ESC KEY CLOSES BOTH MODALS                          */
+/* -------------------------------------------------- */
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") {
+    document.getElementById("searchModal").classList.remove("show");
+    document.getElementById("videoModal").classList.remove("show");
+    document.getElementById("modalVideo").src = "";
+  }
+});
+</script>
 
