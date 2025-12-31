@@ -254,6 +254,12 @@
     color: #e5e7eb;
   }
 
+  #searchModal .modal-content {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+
   </style>
 </head>
 <body>
@@ -444,9 +450,10 @@ function populateLanguageTable(results) {
   const table = document.getElementById("langTable");
 
   // Extract languages from results
-  const langs = results
-    .map(r => r.language?.toUpperCase())
-    .filter(Boolean);
+const langs = results
+  .map(r => r.language?.toString().trim().slice(0, 2).toUpperCase())
+  .filter(Boolean);
+
 
   // Remove duplicates
   const uniqueLangs = [...new Set(langs)];
